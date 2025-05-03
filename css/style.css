@@ -128,6 +128,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 300px;
   padding: 20px;
   position: relative;
+  width: calc(100% - 300px);
+  float: right;
+  transition: 0.5s;
 }
 
 /* Section Visibility */
@@ -143,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: none !important;
 }
 
-/* Override animation classes */
+/* Animation Overrides */
 .animate-box {
   opacity: 1 !important;
   visibility: visible !important;
@@ -1573,10 +1576,7 @@ body.offcanvas {
 
 .colorlib-nav-toggle i {
   position: relative;
-  display: -moz-inline-stack;
   display: inline-block;
-  zoom: 1;
-  *display: inline;
   width: 30px;
   height: 3px;
   color: #000;
@@ -1584,19 +1584,20 @@ body.offcanvas {
   text-transform: uppercase;
   text-indent: -55px;
   background: #000;
-  -webkit-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  transition: all .2s ease-out; }
-  .colorlib-nav-toggle i::before, .colorlib-nav-toggle i::after {
+  transition: all .2s ease-out;
+}
+
+.colorlib-nav-toggle i::before,
+.colorlib-nav-toggle i::after {
   content: '';
   width: 30px;
   height: 3px;
   background: #000;
   position: absolute;
   left: 0;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s; }
+  transition: 0.2s;
+}
+
 .colorlib-nav-toggle.dark i {
   position: relative;
   color: #000;
