@@ -1765,10 +1765,12 @@ body.offcanvas {
 }
 
 .about-desc {
-  text-align: center;
   max-width: 800px;
   margin: 0 auto;
   padding: 2em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .about-desc .heading-meta {
@@ -1776,67 +1778,122 @@ body.offcanvas {
   color: #2c98f0;
   margin-bottom: 1em;
   display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .about-desc h2 {
   font-size: 2.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   color: #000;
+  font-family: 'Playfair Display', serif;
 }
 
 .about-desc p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #666;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5em;
 }
 
-/* Service Cards Enhancement */
-.services {
-  background: #fff;
-  padding: 2em;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.about-desc p strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.about-desc a {
+  color: #2c98f0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(44, 152, 240, 0.3);
+  transition: all 0.3s ease;
+}
+
+.about-desc a:hover {
+  color: #1a7bc9;
+  border-bottom-color: #1a7bc9;
+}
+
+/* Highlight Cards - Alternative Design */
+.services.color-2,
+.services.color-3,
+.services.color-4 {
+  background: transparent;
+  padding: 1.5em;
+  border-radius: 4px;
+  border-left: 3px solid #2c98f0;
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
-.services:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.services.color-2 {
+  border-left-color: #2c98f0;
+}
+
+.services.color-3 {
+  border-left-color: #f9bf3f;
+}
+
+.services.color-4 {
+  border-left-color: #a84cb8;
+}
+
+.services.color-2:hover,
+.services.color-3:hover,
+.services.color-4:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .services .icon2 {
-  font-size: 2.5em;
-  margin-bottom: 1em;
+  font-size: 1.5em;
+  margin-bottom: 0.8em;
+  color: #2c98f0;
+  display: inline-block;
+}
+
+.services.color-2 .icon2 {
   color: #2c98f0;
 }
 
+.services.color-3 .icon2 {
+  color: #f9bf3f;
+}
+
+.services.color-4 .icon2 {
+  color: #a84cb8;
+}
+
 .services h3 {
-  font-size: 1.4em;
-  margin-bottom: 1em;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
   color: #000;
+  font-weight: 600;
 }
 
 .services p {
+  font-size: 0.95em;
+  line-height: 1.6;
   color: #666;
-  margin-bottom: 1.5em;
-  flex-grow: 1;
+  margin: 0;
 }
 
-.services .btn-primary {
-  background: #2c98f0;
-  border: none;
-  padding: 0.8em 1.5em;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-.services .btn-primary:hover {
-  background: #1a7bc9;
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .services {
+    margin-bottom: 1em;
+    padding: 1.2em;
+  }
+  
+  .services h3 {
+    font-size: 1.1em;
+  }
+  
+  .services p {
+    font-size: 0.9em;
+  }
 }
 
 /* Navigation Refinements */
