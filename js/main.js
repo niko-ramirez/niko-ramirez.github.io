@@ -116,7 +116,6 @@ const setupMenu = () => {
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
 	initializeProjects();
-	setupNavigation();
 	setupAnimations();
 	setupMenu();
 });
@@ -145,40 +144,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	images.forEach(img => imageObserver.observe(img));
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-	// Get all sections
-	const sections = document.querySelectorAll('section[data-section]');
-	const navLinks = document.querySelectorAll('#colorlib-main-menu a[data-nav-section]');
-
-	// Function to show a specific section and hide others
-	function showSection(sectionName) {
-		sections.forEach(section => {
-			if (section.getAttribute('data-section') === sectionName) {
-				section.style.display = 'block';
-			} else {
-				section.style.display = 'none';
-			}
-		});
-	}
-
-	// Add click event listeners to navigation links
-	navLinks.forEach(link => {
-		link.addEventListener('click', function(e) {
-			e.preventDefault();
-			const targetSection = this.getAttribute('data-nav-section');
-			showSection(targetSection);
-			
-			// Update active state
-			navLinks.forEach(link => link.parentElement.classList.remove('active'));
-			this.parentElement.classList.add('active');
-		});
-	});
-
-	// Show the first section by default
-	if (sections.length > 0) {
-		showSection(sections[0].getAttribute('data-section'));
-		navLinks[0].parentElement.classList.add('active');
-	}
 });
