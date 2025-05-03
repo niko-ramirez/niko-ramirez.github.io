@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -15,18 +15,30 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>My Portfolio</title>
+	<title>Nicholas Ramirez | MIT Graduate Student & Software Engineer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Portfolio" />
-	<meta name="keywords" content="portfolio resume" />
+	<meta name="description" content="Portfolio of Nicholas Ramirez, MIT Graduate Student specializing in Machine Learning and Software Engineering" />
+	<meta name="keywords" content="Nicholas Ramirez, MIT, Machine Learning, Software Engineering, Portfolio" />
 	<meta name="author" content="Nicholas Ramirez" />
 
+	<!-- Open Graph / Social Media Meta Tags -->
+	<meta property="og:title" content="Nicholas Ramirez | MIT Graduate Student & Software Engineer" />
+	<meta property="og:description" content="Portfolio of Nicholas Ramirez, MIT Graduate Student specializing in Machine Learning and Software Engineering" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://niko-ramirez.github.io" />
+	<meta property="og:image" content="https://niko-ramirez.github.io/images/my_headshot.jpg" />
+
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="js/main.js" as="script">
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -42,7 +54,7 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js" defer></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -54,15 +66,17 @@
 	<div id="colorlib-page">
 		<div class="container-wrap">
 			<!-- Navbar Toggle Button -->
-			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar"
-				aria-expanded="false" aria-controls="navbar"><i></i></a>
+			<button class="js-colorlib-nav-toggle colorlib-nav-toggle" aria-label="Toggle Navigation Menu">
+				<span class="sr-only">Toggle Navigation</span>
+				<span></span>
+			</button>
 
 			<!-- Left navbar -->
 			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 				<div class="text-center">
-					<div class="author-img" style="background-image: url(images/my_headshot.jpg); height: 119px; width: 137px;"></div>
+					<div class="author-img" style="background-image: url(images/my_headshot.jpg);" role="img" aria-label="Nicholas Ramirez's headshot"></div>
 					<h1 id="colorlib-logo"><a href="index.html">Nicholas Ramirez</a></h1>
-					<span class="position"><a href="#"><b>MIT Grad Student</b></a></span>
+					<span class="position">MIT Graduate Student</span>
 				</div>
 				<!-- Navbar Items -->
 				<nav id="colorlib-main-menu" role="navigation" class="navbar">
@@ -84,15 +98,10 @@
 				<!-- Navbar Footer -->
 				<div class="colorlib-footer">
 					<ul>
-						<li><a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" title="LinkedIn"><i
-									class="icon-social-linkedin"></i></a></li>
-						<li><a href="https://github.com/niko-ramirez" target="_blank" title="GitHub"><i
-									class="icon-social-github"></i></a>
-						</li>
-						<li><a href="mailto:ramirezn@mit.edu" title="Email"><i class="icon-mail"></i></a>
-						</li>
-						<li><a href="images/Nicholas_Ramirez_Resume.pdf" title="Resume"><i class="icon-attachment"></i></a>
-						</li>
+						<li><a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a></li>
+						<li><a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a></li>
+						<li><a href="mailto:ramirezn@mit.edu" aria-label="Send Email"><i class="icon-mail"></i></a></li>
+						<li><a href="images/Nicholas_Ramirez_Resume.pdf" aria-label="Download Resume"><i class="icon-attachment"></i></a></li>
 					</ul>
 				</div>
 			</aside>
@@ -689,7 +698,7 @@
 													<li>
 														Interacted and collaborated with cross-functional departments
 														and faculties to implement new designs and features offered by
-														Western’s IT department.
+														Western's IT department.
 													</li>
 												</ul>
 											</div>
@@ -851,7 +860,7 @@
 
 
 	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+	<script src="js/main.js" defer></script>
 
 </body>
 
