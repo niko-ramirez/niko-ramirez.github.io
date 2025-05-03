@@ -129,6 +129,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
 }
 
+/* Section Visibility */
+#colorlib-main .colorlib-blog,
+#colorlib-main .colorlib-about,
+#colorlib-main .colorlib-education,
+#colorlib-main .colorlib-projects,
+#colorlib-main .colorlib-contact {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
 /* Hero Section */
 #colorlib-hero {
   height: 100vh;

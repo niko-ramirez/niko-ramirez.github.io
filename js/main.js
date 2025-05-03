@@ -40,38 +40,6 @@ const isMobile = {
 	}
 };
 
-// Smooth scrolling with modern Intersection Observer
-const setupNavigation = () => {
-	const sections = document.querySelectorAll('section[data-section]');
-	const navLinks = document.querySelectorAll('#navbar a');
-	
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				const sectionId = entry.target.dataset.section;
-				navLinks.forEach(link => {
-					link.classList.toggle('active', link.dataset.navSection === sectionId);
-				});
-			}
-		});
-	}, {
-		threshold: 0.5
-	});
-
-	sections.forEach(section => observer.observe(section));
-
-	// Smooth scroll for navigation links
-	navLinks.forEach(link => {
-		link.addEventListener('click', (e) => {
-			e.preventDefault();
-			const targetSection = document.querySelector(`[data-section="${link.dataset.navSection}"]`);
-			if (targetSection) {
-				targetSection.scrollIntoView({ behavior: 'smooth' });
-			}
-		});
-	});
-};
-
 // Modern animation handling
 const setupAnimations = () => {
 	const animateElements = document.querySelectorAll('.animate-box');
