@@ -53,6 +53,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
 }
 
 /* Sidebar Styles */
@@ -62,10 +64,11 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 300px;
   height: 100vh;
-  background: var(--dark-bg);
+  background: #2c3e50;
   color: white;
   padding: 20px;
   z-index: 1001;
+  transition: transform 0.3s ease;
 }
 
 #colorlib-aside .text-center {
@@ -149,11 +152,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Main Content */
 #colorlib-main {
   margin-left: 300px;
-  padding: 20px;
-  position: relative;
   width: calc(100% - 300px);
   float: right;
   transition: 0.5s;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
 }
 
 /* Section Visibility */
@@ -1947,19 +1951,41 @@ body.offcanvas {
 @media screen and (max-width: 768px) {
   .colorlib-nav-toggle {
     display: block;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1002;
   }
   
   #colorlib-aside {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
   }
   
   #colorlib-aside.active {
     transform: translateX(0);
   }
   
-  .services {
-    margin-bottom: 2em;
+  #colorlib-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .container-wrap {
+    flex-direction: column;
+  }
+  
+  .about-hero,
+  .about-intro,
+  .about-expertise,
+  .about-experience,
+  .about-hobbies {
+    padding: 2rem 1rem;
   }
 }
 
@@ -2098,6 +2124,9 @@ body.offcanvas {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     margin-bottom: 2rem;
+    width: 100%;
+    float: left;
+    clear: both;
 }
 
 .quick-facts h3 {
@@ -2133,6 +2162,12 @@ body.offcanvas {
 .connect-box {
     background: linear-gradient(135deg, #2c98f0 0%, #1a7bc9 100%);
     color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    width: 100%;
+    float: left;
+    clear: both;
 }
 
 .connect-box h3 {
