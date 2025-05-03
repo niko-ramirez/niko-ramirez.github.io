@@ -2068,17 +2068,20 @@ body.offcanvas {
     margin-bottom: 1.5rem;
 }
 
+/* Quick Facts Boxes */
 .quick-facts {
     background: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
 }
 
 .quick-facts h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: #2c3e50;
+    font-family: 'Playfair Display', serif;
 }
 
 .quick-facts ul {
@@ -2092,485 +2095,56 @@ body.offcanvas {
     display: flex;
     align-items: center;
     color: #666;
+    transition: all 0.3s ease;
 }
 
 .quick-facts i {
     margin-right: 1rem;
     color: #2c98f0;
     font-size: 1.2rem;
-}
-
-/* Expertise Section */
-.about-expertise {
-    padding: 4rem 0;
-    background: #f8f9fa;
-}
-
-.expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.expertise-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.expertise-item:hover {
-    transform: translateY(-5px);
-}
-
-.expertise-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #2c98f0 0%, #1a7bc9 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.expertise-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
-
-.expertise-item p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Experience Section */
-.about-experience {
-    padding: 4rem 0;
-    background: white;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: #e9ecef;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 3rem;
-    width: 50%;
-    padding-right: 3rem;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: 50%;
-    padding-right: 0;
-    padding-left: 3rem;
-}
-
-.timeline-content {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.timeline-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-}
-
-.timeline-date {
-    display: block;
-    color: #2c98f0;
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-
-.timeline-content p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Achievements Section */
-.about-achievements {
-    padding: 4rem 0;
-    background: #f8f9fa;
-}
-
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.achievement-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: flex-start;
-}
-
-.achievement-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #2c98f0 0%, #1a7bc9 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1.5rem;
-    color: white;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-.achievement-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-}
-
-.achievement-content p {
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Contact Section */
-.about-contact {
-    padding: 4rem 0;
-    background: white;
+    width: 20px;
     text-align: center;
 }
 
-.contact-content {
-    max-width: 600px;
-    margin: 0 auto;
+/* Connect Box Specific Styles */
+.connect-box {
+    background: linear-gradient(135deg, #2c98f0 0%, #1a7bc9 100%);
+    color: white;
 }
 
-.contact-content p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 2rem;
-    line-height: 1.8;
+.connect-box h3 {
+    color: white;
 }
 
-.contact-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+.connect-box li {
+    color: white;
 }
 
-.btn {
-    padding: 0.8rem 2rem;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+.connect-box i {
+    color: white;
+}
+
+.connect-box a {
+    color: white;
     text-decoration: none;
-}
-
-.btn-primary {
-    background: #2c98f0;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #1a7bc9;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #2c98f0;
-    border: 2px solid #2c98f0;
-}
-
-.btn-secondary:hover {
-    background: #2c98f0;
-    color: white;
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .timeline::before {
-        left: 30px;
-    }
-    
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 0;
-    }
-    
-    .timeline-item:nth-child(even) {
-        margin-left: 0;
-        padding-left: 70px;
-    }
-    
-    .contact-buttons {
-        flex-direction: column;
-    }
-    
-    .btn {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-}
-
-/* Who Am I Section with Images */
-.intro-content {
-    position: relative;
-    margin-bottom: 3rem;
-}
-
-.intro-image {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 2rem;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.intro-image:hover .profile-image {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.intro-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-item span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-/* Hobbies & Interests Section */
-.about-hobbies {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-.hobbies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.hobby-card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    background: white;
-}
-
-.hobby-card:hover {
-    transform: translateY(-5px);
-}
-
-.hobby-content {
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hobby-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.music .hobby-icon {
-    background: linear-gradient(135deg, #2c98f0 0%, #1a7bc9 100%);
-}
-
-.reading .hobby-icon {
-    background: linear-gradient(135deg, #f9bf3f 0%, #e6a91e 100%);
-}
-
-.outdoors .hobby-icon {
-    background: linear-gradient(135deg, #a84cb8 0%, #8c3a9a 100%);
-}
-
-.hobby-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
-
-.hobby-details p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.hobby-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.hobby-list li {
-    background: #f8f9fa;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #2c3e50;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
-.music .hobby-list li:hover {
-    background: #2c98f0;
-    color: white;
+.connect-box a:hover {
+    transform: translateX(5px);
+    opacity: 0.9;
 }
 
-.reading .hobby-list li:hover {
-    background: #f9bf3f;
-    color: white;
+.connect-box li:hover i {
+    transform: scale(1.1);
 }
 
-.outdoors .hobby-list li:hover {
-    background: #a84cb8;
-    color: white;
-}
-
-.hobby-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.hobby-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.hobby-card:hover .hobby-image img {
-    transform: scale(1.05);
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .intro-image {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .intro-gallery {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-item img {
-        height: 200px;
-    }
-    
-    .hobbies-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .hobby-content {
-        padding: 1.5rem;
-    }
-    
-    .hobby-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
+/* Remove old contact section styles */
+.about-contact,
+.contact-content,
+.contact-buttons {
+    display: none;
 }
