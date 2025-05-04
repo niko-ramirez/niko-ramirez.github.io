@@ -179,9 +179,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero-image {
@@ -190,6 +197,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
 .hero-image img {
@@ -212,6 +220,17 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.9;
   font-weight: 300;
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
 }
 
 /* Introduction Section */
@@ -2413,9 +2432,16 @@ body.offcanvas {
 
 .hero-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    text-align: left;
 }
 
 .hero-image {
@@ -2424,6 +2450,7 @@ body.offcanvas {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 .hero-image img {
@@ -2446,6 +2473,17 @@ body.offcanvas {
     opacity: 0.9;
     font-weight: 300;
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
 }
 
 /* Introduction Section */
