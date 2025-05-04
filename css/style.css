@@ -168,39 +168,43 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem;
 }
 
-/* Hero Section */
+/* About Page Hero Section */
 .about-hero {
-  background: linear-gradient(135deg, #8EB8E5 0%, #1B5299 75%);
-  color: white;
-  padding: 6rem 0;
-  text-align: center;
-  margin-bottom: 4rem;
-  clear: both;
+    background: linear-gradient(135deg, #8EB8E5 0%, #1B5299 75%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+    clear: both;
 }
 
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
+.about-hero .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    color: white;
 }
 
-.hero-subtitle {
-  font-size: 2.0rem;
-  opacity: 0.9;
-  font-weight: 300;
+.about-hero .hero-subtitle {
+    font-size: 2.0rem;
+    opacity: 0.9;
+    font-weight: 300;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: none;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .hero-text {
-    text-align: center;
-  }
+    .about-hero .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-hero .hero-text {
+        text-align: center;
+    }
 }
 
 /* Introduction Section */
@@ -2388,26 +2392,27 @@ body.offcanvas {
     margin-bottom: 4rem;
 }
 
-.hero-title {
+.about-hero .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
 }
 
-.hero-subtitle {
+.about-hero .hero-subtitle {
     font-size: 2.0rem;
     opacity: 0.9;
     font-weight: 300;
+    font-family: 'Quicksand', sans-serif;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-content {
+  .about-hero .hero-content {
     flex-direction: column;
     text-align: center;
   }
   
-  .hero-text {
+  .about-hero .hero-text {
     text-align: center;
   }
 }
@@ -2921,4 +2926,227 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+/* Projects Page Styles */
+.colorlib-projects {
+    padding: 2em 0;
+}
+
+.colorlib-narrow-content {
+    padding: 0 2em;
+    margin: 0;
+}
+
+.projects-hero {
+    position: relative;
+    padding: 4em 0;
+    margin-bottom: 3em;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(27, 82, 153, 0.1) 0%, rgba(142, 184, 229, 0.1) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #1B5299;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 3.5em;
+    color: #1B5299;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2em;
+    max-width: 600px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3em;
+    margin-top: 2em;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1B5299;
+    line-height: 1;
+    margin-bottom: 0.2em;
+}
+
+.stat-label {
+    font-size: 1em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .projects-hero {
+        padding: 3em 0;
+        margin-bottom: 2em;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-description {
+        font-size: 1.1em;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .stat-item {
+        align-items: center;
+    }
+}
+
+/* Projects Page Styles */
+.colorlib-projects {
+    padding: 2em 0;
+}
+
+.colorlib-narrow-content {
+    padding: 0 2em;
+    margin: 0;
+}
+
+/* Projects Page Hero Section */
+.colorlib-projects .projects-hero {
+    position: relative;
+    padding: 6em 0 4em;
+    margin-bottom: 2em;
+    background: linear-gradient(135deg, #1B5299 0%, #8EB8E5 100%);
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.colorlib-projects .projects-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(27, 82, 153, 0.2) 0%, rgba(142, 184, 229, 0.2) 100%);
+    z-index: 1;
+}
+
+.colorlib-projects .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.colorlib-projects .hero-title {
+    font-size: 3.5em;
+    color: white;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.colorlib-projects .hero-description {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2em;
+    max-width: 600px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.colorlib-projects .hero-stats {
+    display: flex;
+    gap: 3em;
+    margin-top: 2em;
+}
+
+.colorlib-projects .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.colorlib-projects .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.2em;
+    font-family: 'Playfair Display', serif;
+}
+
+.colorlib-projects .stat-label {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .colorlib-projects .projects-hero {
+        padding: 4em 0 3em;
+        margin-bottom: 1.5em;
+    }
+
+    .colorlib-projects .hero-title {
+        font-size: 2.5em;
+    }
+
+    .colorlib-projects .hero-description {
+        font-size: 1.1em;
+    }
+
+    .colorlib-projects .hero-stats {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .colorlib-projects .stat-item {
+        align-items: center;
+    }
 }

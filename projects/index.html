@@ -87,108 +87,116 @@
             <div id="colorlib-main">
                 <section class="colorlib-projects">
                     <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                                    <div class="col-md-12">
-                                        <div class="about-desc">
-                                            <span class="heading-meta">Projects</span>
-                                            <h2 class="colorlib-heading">My Projects</h2>
-                                            <p>Explore my work across research, teaching, and industry projects.</p>
+                        <div class="projects-hero">
+                            <div class="hero-content">
+                                <span class="hero-subtitle">My Work</span>
+                                <h1 class="hero-title">Projects & Research</h1>
+                                <p class="hero-description">Exploring the intersection of machine learning, software engineering, and education through hands-on projects and research initiatives.</p>
+                                <div class="hero-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">4+</span>
+                                        <span class="stat-label">Years Experience</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">10+</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">3</span>
+                                        <span class="stat-label">Categories</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Search and Filter Section -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="search-box">
+                                    <input type="text" id="projectSearch" class="form-control" placeholder="Search projects...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="filter-buttons">
+                                    <button class="filter-btn active" data-filter="all">All</button>
+                                    <button class="filter-btn" data-filter="research">Research</button>
+                                    <button class="filter-btn" data-filter="teaching">Teaching</button>
+                                    <button class="filter-btn" data-filter="industry">Industry</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects Grid -->
+                        <div class="project-grid">
+                            <div class="project-item" data-category="research">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Knowledge Graph Completion in Federated Learning</h3>
+                                        <p class="project-description">Research project focusing on completing knowledge graphs in a federated learning setting with differential privacy guarantees.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Python</span>
+                                            <span class="tag">PyTorch</span>
+                                            <span class="tag">Differential Privacy</span>
+                                            <span class="tag">Federated Learning</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="#" class="btn btn-primary">View Details</a>
+                                            <a href="#" class="btn btn-outline">PDF</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Search and Filter Section -->
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <div class="search-box">
-                                            <input type="text" id="projectSearch" class="form-control" placeholder="Search projects...">
+                            <div class="project-item" data-category="teaching">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Machine Learning Teaching Assistant</h3>
+                                        <p class="project-description">Developed and maintained course materials for MIT's Introduction to Machine Learning course (6.390).</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Python</span>
+                                            <span class="tag">Jupyter</span>
+                                            <span class="tag">scikit-learn</span>
+                                            <span class="tag">Teaching</span>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="filter-buttons">
-                                            <button class="filter-btn active" data-filter="all">All</button>
-                                            <button class="filter-btn" data-filter="research">Research</button>
-                                            <button class="filter-btn" data-filter="teaching">Teaching</button>
-                                            <button class="filter-btn" data-filter="industry">Industry</button>
+                                        <div class="project-links">
+                                            <a href="#" class="btn btn-primary">View Details</a>
+                                            <a href="#" class="btn btn-outline">PDF</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Projects Grid -->
-                                <div class="project-grid">
-                                    <div class="project-item" data-category="research">
-                                        <div class="project-card animate-box" data-animate-effect="fadeInLeft">
-                                            <div class="project-content">
-                                                <h3>Knowledge Graph Completion in Federated Learning</h3>
-                                                <p class="project-description">Research project focusing on completing knowledge graphs in a federated learning setting with differential privacy guarantees.</p>
-                                                <div class="project-tags">
-                                                    <span class="tag">Python</span>
-                                                    <span class="tag">PyTorch</span>
-                                                    <span class="tag">Differential Privacy</span>
-                                                    <span class="tag">Federated Learning</span>
-                                                </div>
-                                                <div class="project-links">
-                                                    <a href="#" class="btn btn-primary">View Details</a>
-                                                    <a href="#" class="btn btn-outline">PDF</a>
-                                                </div>
-                                            </div>
+                            <div class="project-item" data-category="teaching">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Programming Fundamentals TA</h3>
+                                        <p class="project-description">Teaching Assistant for MIT's Fundamentals of Programming course (6.101).</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Python</span>
+                                            <span class="tag">Teaching</span>
+                                            <span class="tag">Code Review</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="#" class="btn btn-primary">View Details</a>
+                                            <a href="#" class="btn btn-outline">PDF</a>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="project-item" data-category="teaching">
-                                        <div class="project-card animate-box" data-animate-effect="fadeInLeft">
-                                            <div class="project-content">
-                                                <h3>Machine Learning Teaching Assistant</h3>
-                                                <p class="project-description">Developed and maintained course materials for MIT's Introduction to Machine Learning course (6.390).</p>
-                                                <div class="project-tags">
-                                                    <span class="tag">Python</span>
-                                                    <span class="tag">Jupyter</span>
-                                                    <span class="tag">scikit-learn</span>
-                                                    <span class="tag">Teaching</span>
-                                                </div>
-                                                <div class="project-links">
-                                                    <a href="#" class="btn btn-primary">View Details</a>
-                                                    <a href="#" class="btn btn-outline">PDF</a>
-                                                </div>
-                                            </div>
+                            <div class="project-item" data-category="industry">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Goodbye Dockerfile, Hello Bazel</h3>
+                                        <p class="project-description">Optimized CI/CD pipeline by migrating from Dockerfile to Bazel, resulting in significant performance improvements.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Bazel</span>
+                                            <span class="tag">Docker</span>
+                                            <span class="tag">CI/CD</span>
                                         </div>
-                                    </div>
-
-                                    <div class="project-item" data-category="teaching">
-                                        <div class="project-card animate-box" data-animate-effect="fadeInLeft">
-                                            <div class="project-content">
-                                                <h3>Programming Fundamentals TA</h3>
-                                                <p class="project-description">Teaching Assistant for MIT's Fundamentals of Programming course (6.101).</p>
-                                                <div class="project-tags">
-                                                    <span class="tag">Python</span>
-                                                    <span class="tag">Teaching</span>
-                                                    <span class="tag">Code Review</span>
-                                                </div>
-                                                <div class="project-links">
-                                                    <a href="#" class="btn btn-primary">View Details</a>
-                                                    <a href="#" class="btn btn-outline">PDF</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="project-item" data-category="industry">
-                                        <div class="project-card animate-box" data-animate-effect="fadeInLeft">
-                                            <div class="project-content">
-                                                <h3>Goodbye Dockerfile, Hello Bazel</h3>
-                                                <p class="project-description">Optimized CI/CD pipeline by migrating from Dockerfile to Bazel, resulting in significant performance improvements.</p>
-                                                <div class="project-tags">
-                                                    <span class="tag">Bazel</span>
-                                                    <span class="tag">Docker</span>
-                                                    <span class="tag">CI/CD</span>
-                                                </div>
-                                                <div class="project-links">
-                                                    <a href="https://plaid.com/blog/hello-bazel/" class="btn btn-primary" target="_blank">View Article</a>
-                                                    <a href="#" class="btn btn-outline">PDF</a>
-                                                </div>
-                                            </div>
+                                        <div class="project-links">
+                                            <a href="https://plaid.com/blog/hello-bazel/" class="btn btn-primary" target="_blank">View Article</a>
+                                            <a href="#" class="btn btn-outline">PDF</a>
                                         </div>
                                     </div>
                                 </div>
