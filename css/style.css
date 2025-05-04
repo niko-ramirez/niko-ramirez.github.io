@@ -234,9 +234,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   flex-shrink: 0;
