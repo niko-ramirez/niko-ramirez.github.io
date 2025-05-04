@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .position {
-  color: #b3b3b3;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -694,7 +694,7 @@ figure {
     font-size: 16px;
     width: 80%;
     margin: 20px auto 0px auto;
-    color: #b3b3b3;
+    color: #fff;
     font-style: italic;
     font-family: "Quicksand", Arial, sans-serif; }
     @media screen and (max-width: 480px) {
@@ -733,7 +733,7 @@ figure {
   #colorlib-aside #colorlib-logo a {
     display: block;
     text-align: center;
-    color: #000;
+    color: #fff;
     padding-right: .3em; }
 #colorlib-aside #colorlib-main-menu {
   display: block;
@@ -757,7 +757,7 @@ figure {
       text-transform: uppercase;
       letter-spacing: 1px; }
       #colorlib-aside #colorlib-main-menu ul li a {
-        color: rgba(0, 0, 0, 0.7);
+        color: #fff;
         text-decoration: none;
         position: relative;
         padding: 10px 0;
@@ -786,7 +786,7 @@ figure {
           transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         #colorlib-aside #colorlib-main-menu ul li a:hover {
           text-decoration: none;
-          color: black; }
+          color:#fff; }
           #colorlib-aside #colorlib-main-menu ul li a:hover:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
@@ -795,7 +795,7 @@ figure {
             -o-transform: scaleX(1);
             transform: scaleX(1); }
       #colorlib-aside #colorlib-main-menu ul li.active a {
-        color: #8EB8E5; }
+        color: #fff; }
         #colorlib-aside #colorlib-main-menu ul li.active a:after {
           visibility: visible;
           -webkit-transform: scaleX(1);
@@ -807,7 +807,7 @@ figure {
   font-size: 15px;
   text-align: center;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   padding: 0 20px;
   width: 100%; }
   @media screen and (max-width: 768px) {
@@ -827,12 +827,12 @@ figure {
         #colorlib-aside .colorlib-footer ul li a {
           /* color: rgba(255, 255, 255, 0.3); */
           font-size: 32px;
-          color: #8EB8E5;
+          color: #fff;
           padding: 4px; }
           #colorlib-aside .colorlib-footer ul li a:hover, #colorlib-aside .colorlib-footer ul li a:active, #colorlib-aside .colorlib-footer ul li a:focus {
             text-decoration: none;
             outline: none;
-            color: #8EB8E5; }
+            color: #fff; }
 
 .container-wrap {
   /* max-width: 1170px; */
@@ -1059,7 +1059,7 @@ body.offcanvas {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Quicksand", Arial, sans-serif;
-  background-color: #8EB8E5;
+  background-color: #fff;
   color: #fff;
   position: relative;
   -webkit-box-shadow: none !important;
@@ -2093,18 +2093,6 @@ body.offcanvas {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   padding: 4em 0;
   position: relative;
-}
-
-.colorlib-about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../images/pattern.png');
-  opacity: 0.03;
-  pointer-events: none;
 }
 
 .about-desc {
