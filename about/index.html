@@ -19,28 +19,24 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="../css/style.css" as="style">
-    <link rel="preload" href="../js/main.js" as="script">
-
-    <!-- Google Fonts -->
+    <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Animate.css -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/animate.css">
-    <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="../css/icomoon.css">
-    <!-- Bootstrap  -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <!-- Flexslider  -->
     <link rel="stylesheet" href="../css/flexslider.css">
-    <!-- Owl Carousel -->
     <link rel="stylesheet" href="../css/owl.carousel.min.css">
     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
-    <!-- Theme style  -->
     <link rel="stylesheet" href="../css/style.css">
+
     <!-- Modernizr JS -->
     <script src="../js/modernizr-2.6.2.min.js" defer></script>
 </head>
@@ -110,11 +106,11 @@
                                     </div>
                                     <div class="intro-gallery">
                                         <div class="gallery-item">
-                                            <img src="../images/niko_at_game.jpg" alt="Nicholas Ramirez" loading="lazy">
+                                            <img src="../images/niko_at_game.jpg" alt="Nicholas Ramirez at LA Dodger's Playoff Game" loading="lazy">
                                             <span>LA Dodger's Playoff Game</span>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="../images/niko_fun.jpg" alt="Fun" loading="lazy">
+                                            <img src="../images/niko_fun.jpg" alt="Nicholas Ramirez in Anchorage, AK" loading="lazy">
                                             <span>Anchorage, AK</span>
                                         </div>
                                     </div>
@@ -233,7 +229,7 @@
                                     </div>
                                 </div>
                                 <div class="hobby-image">
-                                    <img src="../images/laptop_performance.jpg" alt="laptop" loading="lazy">
+                                    <img src="../images/laptop_performance.jpg" alt="Laptop Performance" loading="lazy">
                                 </div>
                             </div>
                             <div class="hobby-card volunteering">
@@ -252,7 +248,7 @@
                                     </div>
                                 </div>
                                 <div class="hobby-image">
-                                    <img src="../images/niko_volunteer.jpg" alt="Volunteer" loading="lazy">
+                                    <img src="../images/niko_volunteer.jpg" alt="Volunteering" loading="lazy">
                                 </div>
                             </div>
                             <div class="hobby-card reading">
@@ -295,7 +291,27 @@
     <script src="../js/owl.carousel.min.js"></script>
     <!-- Counters -->
     <script src="../js/jquery.countTo.js"></script>
+    <!-- Performance Monitoring -->
+    <script>
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Report Web Vitals
+            if ('web-vitals' in window) {
+                webVitals.getCLS(console.log);
+                webVitals.getFID(console.log);
+                webVitals.getLCP(console.log);
+            }
+            
+            // Mark page as ready
+            document.querySelector('.colorlib-page').classList.add('ready');
+            
+            // Log performance metrics
+            const perfData = window.performance.timing;
+            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+            console.log('Page load time:', pageLoadTime, 'ms');
+        });
+    </script>
     <!-- MAIN JS -->
-    <script src="../js/main.js" defer></script>
+    <script src="../js/main.js"></script>
 </body>
 </html> 
