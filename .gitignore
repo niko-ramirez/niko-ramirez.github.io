@@ -1,7 +1,12 @@
- _site
- .DS_Store
- .vscode
- .idea
- .env
- 
+# Jekyll build output
+_site/
 
+# Common editor files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Ruby environment
+.bundle/
+vendor/
