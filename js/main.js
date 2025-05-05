@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					const category = item.dataset.category;
 
 					const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-					const matchesFilter = filter === 'all' || category === filter;
+					const matchesFilter = filter === 'all' || category.includes(filter);
 
 					if (matchesSearch && matchesFilter) {
 						item.style.display = '';
