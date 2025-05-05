@@ -119,25 +119,81 @@
                             <div class="col-md-6">
                                 <div class="filter-buttons">
                                     <button class="filter-btn active" data-filter="all">All</button>
-                                    <button class="filter-btn" data-filter="research">Research</button>
-                                    <button class="filter-btn" data-filter="teaching">Teaching</button>
-                                    <button class="filter-btn" data-filter="industry">Industry</button>
+                                    <button class="filter-btn" data-filter="ml">Machine Learning & AI</button>
+                                    <button class="filter-btn" data-filter="hardware">Hardware & Embedded</button>
+                                    <button class="filter-btn" data-filter="privacy">Privacy & Security</button>
+                                    <button class="filter-btn" data-filter="education">Education & Teaching</button>
+                                    <button class="filter-btn" data-filter="industry">Industry & Development</button>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Projects Grid -->
                         <div class="project-grid">
-                            <div class="project-item" data-category="research">
+                            <div class="project-item" data-category="ml">
                                 <div class="project-card animate-box" data-animate-effect="fadeInLeft">
                                     <div class="project-content">
-                                        <h3>Knowledge Graph Completion in Federated Learning</h3>
-                                        <p class="project-description">Research project focusing on completing knowledge graphs in a federated learning setting with differential privacy guarantees.</p>
+                                        <h3>Leveraging Basis Alignment to create a Generalized Multi-Relational Graph Convolution Network in the Federated Setting</h3>
+                                        <p class="project-description">Developed a novel graph neural network architecture for knowledge graph completion in federated learning environments, incorporating differential privacy guarantees for secure distributed learning.</p>
                                         <div class="project-tags">
-                                            <span class="tag">Python</span>
-                                            <span class="tag">PyTorch</span>
-                                            <span class="tag">Differential Privacy</span>
+                                            <span class="tag">Graph Neural Networks</span>
                                             <span class="tag">Federated Learning</span>
+                                            <span class="tag">Differential Privacy</span>
+                                            <span class="tag">Research</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://dspace.mit.edu/bitstream/handle/1721.1/151657/ramirez-ramirezn-meng-eecs-2023-thesis.pdf?sequence=1&isAllowed=y" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="ml">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Imputing Parkinson's Patient Data with Machine Learning</h3>
+                                        <p class="project-description">Applied machine learning techniques to predict UPDRS scores for Parkinson's patients, using linear regression and clustering to analyze disease progression patterns in the Fox Insight dataset.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Machine Learning</span>
+                                            <span class="tag">Healthcare</span>
+                                            <span class="tag">Data Analysis</span>
+                                            <span class="tag">Research</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="../images/MLHC_project.pdf" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="hardware">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>FPGAirPods</h3>
+                                        <p class="project-description">Designed and implemented real-time active noise cancellation on an FPGA using NLMS adaptive filtering, achieving low-latency audio processing for noise reduction.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">FPGA</span>
+                                            <span class="tag">Signal Processing</span>
+                                            <span class="tag">Hardware Design</span>
+                                            <span class="tag">SystemVerilog</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="../images/fpgairpods.pdf" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="hardware">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>RISC-V Processor</h3>
+                                        <p class="project-description">Implemented a high-performance RISC-V processor with two-way set-associative caches, achieving 1.5 GHz operation through optimized gate-level design and cache architecture.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Computer Architecture</span>
+                                            <span class="tag">Hardware Design</span>
+                                            <span class="tag">Minispec</span>
+                                            <span class="tag">Bluespec</span>
                                         </div>
                                         <div class="project-links">
                                             <a href="#" class="btn btn-primary">Read More</a>
@@ -146,16 +202,16 @@
                                 </div>
                             </div>
 
-                            <div class="project-item" data-category="teaching">
+                            <div class="project-item" data-category="hardware">
                                 <div class="project-card animate-box" data-animate-effect="fadeInLeft">
                                     <div class="project-content">
-                                        <h3>Machine Learning Teaching Assistant</h3>
-                                        <p class="project-description">Developed and maintained course materials for MIT's Introduction to Machine Learning course (6.390).</p>
+                                        <h3>Arduino Laser Tag</h3>
+                                        <p class="project-description">Built a location-aware laser tag system using ESP32 microcontrollers, integrating Google Geolocation API for real-time player tracking and game management.</p>
                                         <div class="project-tags">
-                                            <span class="tag">Python</span>
-                                            <span class="tag">Jupyter</span>
-                                            <span class="tag">scikit-learn</span>
-                                            <span class="tag">Teaching</span>
+                                            <span class="tag">Embedded Systems</span>
+                                            <span class="tag">IoT</span>
+                                            <span class="tag">Google API</span>
+                                            <span class="tag">C++</span>
                                         </div>
                                         <div class="project-links">
                                             <a href="#" class="btn btn-primary">Read More</a>
@@ -164,18 +220,37 @@
                                 </div>
                             </div>
 
-                            <div class="project-item" data-category="teaching">
+                            <div class="project-item" data-category="ml">
                                 <div class="project-card animate-box" data-animate-effect="fadeInLeft">
                                     <div class="project-content">
-                                        <h3>Programming Fundamentals TA</h3>
-                                        <p class="project-description">Teaching Assistant for MIT's Fundamentals of Programming course (6.101).</p>
+                                        <h3>Graph Neural Networks for Scene Segmentation</h3>
+                                        <p class="project-description">Investigated the application of GNNs to scene segmentation, developing novel methods for converting images to graph structures and implementing message-passing networks for pixel-wise labeling.</p>
                                         <div class="project-tags">
-                                            <span class="tag">Python</span>
-                                            <span class="tag">Teaching</span>
-                                            <span class="tag">Code Review</span>
+                                            <span class="tag">Graph Neural Networks</span>
+                                            <span class="tag">Computer Vision</span>
+                                            <span class="tag">Scene Segmentation</span>
+                                            <span class="tag">Research</span>
                                         </div>
                                         <div class="project-links">
-                                            <a href="#" class="btn btn-primary">Read More</a>
+                                            <a href="../images/GNN_Scene_Segmentation.pdf" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="privacy">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Uberprivate: Differentially Private Ride-Sharing</h3>
+                                        <p class="project-description">Designed a privacy-preserving ridesharing system using differential privacy and geo-indistinguishability, enabling users to control their location privacy while maintaining service utility.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Differential Privacy</span>
+                                            <span class="tag">Geo-Indistinguishability</span>
+                                            <span class="tag">Privacy</span>
+                                            <span class="tag">Research</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="../images/DP-Rideshare.pdf" class="btn btn-primary" target="_blank">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -185,14 +260,51 @@
                                 <div class="project-card animate-box" data-animate-effect="fadeInLeft">
                                     <div class="project-content">
                                         <h3>Goodbye Dockerfile, Hello Bazel</h3>
-                                        <p class="project-description">Optimized CI/CD pipeline by migrating from Dockerfile to Bazel, resulting in significant performance improvements.</p>
+                                        <p class="project-description">Optimized CI/CD pipeline by migrating from Docker to Bazel, achieving significant performance improvements in build times and resource utilization.</p>
                                         <div class="project-tags">
                                             <span class="tag">Bazel</span>
                                             <span class="tag">Docker</span>
                                             <span class="tag">CI/CD</span>
+                                            <span class="tag">DevOps</span>
                                         </div>
                                         <div class="project-links">
                                             <a href="https://plaid.com/blog/hello-bazel/" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="ml">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>Robotic Arm Rock Skipping</h3>
+                                        <p class="project-description">Developed a robotic system to analyze and optimize rock skipping in simulation, investigating the physics of stone skipping through precise control of release parameters.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Robotics</span>
+                                            <span class="tag">Simulation</span>
+                                            <span class="tag">Physics</span>
+                                            <span class="tag">Research</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://arxiv.org/abs/2310.14492" class="btn btn-primary" target="_blank">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-item" data-category="ml">
+                                <div class="project-card animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="project-content">
+                                        <h3>LyRec: Lyric-Based Music Recommendation</h3>
+                                        <p class="project-description">Created a music recommendation system using song lyrics and sentiment analysis, implementing both TF-IDF and GloVe-based approaches for personalized recommendations.</p>
+                                        <div class="project-tags">
+                                            <span class="tag">Natural Language Processing</span>
+                                            <span class="tag">Machine Learning</span>
+                                            <span class="tag">Sentiment Analysis</span>
+                                            <span class="tag">Research</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="../images/NLP_LyRec.pdf" class="btn btn-primary" target="_blank">Read More</a>
                                         </div>
                                     </div>
                                 </div>
