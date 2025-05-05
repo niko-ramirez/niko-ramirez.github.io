@@ -113,3 +113,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	images.forEach(img => imageObserver.observe(img));
 });
+
+// Projects Page Functionality
+document.addEventListener('DOMContentLoaded', function() {
+	const searchInput = document.getElementById('projectSearch');
+	const filterButtons = document.querySelectorAll('.filter-btn');
+	const projectItems = document.querySelectorAll('.project-item');
+
+	// Search functionality
+	if (searchInput) {
+		searchInput.addEventListener('input', function() {
+			const searchTerm = this.value.toLowerCase();
+			const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+
+			projectItems.forEach(item => {
+				const title = item.querySelector('h3').textContent.toLowerCase();
+				const description = item.querySelector('.project-description').textContent.toLowerCase();
+				const category = item.dataset.category;
+
+				const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+				const matchesFilter = activeFilter === 'all' || category === activeFilter;
+
+				if (matchesSearch && matchesFilter) {
+					item.style.display = '';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		});
+	}
+
+	// Filter functionality
+	if (filterButtons.length) {
+		filterButtons.forEach(button => {
+			button.addEventListener('click', function() {
+				// Remove active class from all buttons
+				filterButtons.forEach(btn => btn.classList.remove('active'));
+				// Add active class to clicked button
+				this.classList.add('active');
+
+				const filter = this.dataset.filter;
+				const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+
+				projectItems.forEach(item => {
+					const title = item.querySelector('h3').textContent.toLowerCase();
+					const description = item.querySelector('.project-description').textContent.toLowerCase();
+					const category = item.dataset.category;
+
+					const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+					const matchesFilter = filter === 'all' || category.includes(filter);
+
+					if (matchesSearch && matchesFilter) {
+						item.style.display = '';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+			});
+		});
+	}
+});
