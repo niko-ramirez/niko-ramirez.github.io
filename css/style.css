@@ -3841,3 +3841,139 @@ img {
         flex-direction: column;
     }
 }
+
+/* Travel Page Styles */
+.colorlib-travel {
+    padding: 4em 0;
+    background: #fff;
+}
+
+#travel-map {
+    height: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3em;
+}
+
+.travel-stats {
+    margin: 3em 0;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 2em;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-box h3 {
+    font-size: 1.2em;
+    color: #1B5299;
+    margin-bottom: 0.5em;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1B5299;
+    font-family: 'Playfair Display', serif;
+}
+
+.travel-highlights {
+    margin-top: 4em;
+}
+
+.travel-highlights h3 {
+    font-size: 2em;
+    color: #1B5299;
+    margin-bottom: 1.5em;
+    font-family: 'Playfair Display', serif;
+}
+
+.highlight-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 2em;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.highlight-card h4 {
+    font-size: 1.3em;
+    color: #1B5299;
+    margin: 1em;
+    font-family: 'Playfair Display', serif;
+}
+
+.highlight-card p {
+    padding: 0 1em 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Map Popup Styles */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 0;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 300px !important;
+}
+
+.location-popup {
+    padding: 1em;
+}
+
+.location-popup h3 {
+    font-size: 1.2em;
+    color: #1B5299;
+    margin-bottom: 0.5em;
+    font-family: 'Playfair Display', serif;
+}
+
+.location-popup p {
+    color: #666;
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+}
+
+.location-popup .visit-date {
+    color: #1B5299;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #travel-map {
+        height: 400px;
+    }
+
+    .stat-box {
+        margin-bottom: 1em;
+    }
+
+    .highlight-card {
+        margin-bottom: 1.5em;
+    }
+}
