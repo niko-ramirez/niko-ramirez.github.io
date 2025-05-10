@@ -3457,15 +3457,15 @@ img {
 .blog-post .post-image {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: auto;
     overflow: hidden;
+    background-color: #f8f9fa;
 }
 
 .blog-post .post-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: auto;
+    object-fit: contain;
 }
 
 .blog-post:hover .post-image img {
@@ -3551,15 +3551,16 @@ img {
 .featured-post .post-image {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: auto;
     border-radius: 12px;
     overflow: hidden;
+    background-color: #f8f9fa;
 }
 
 .featured-post .post-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .featured-post .post-overlay {
@@ -3677,7 +3678,7 @@ img {
 
 .blog-post-full .post-image {
     width: 100%;
-    height: 400px;
+    height: auto;
     margin-bottom: 1.5em;
     border-radius: 12px;
     overflow: hidden;
@@ -3685,8 +3686,8 @@ img {
 
 .blog-post-full .post-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .blog-post-full .post-meta {
