@@ -255,13 +255,49 @@ map.on('click', function(e) {
 
 // Update stats based on actual data
 document.addEventListener('DOMContentLoaded', function() {
-    const countriesVisited = new Set(travelLocations.map(loc => loc.name.split(',')[1].trim())).size;
+    // Calculate unique countries visited (excluding US states)
+    const countriesVisited = new Set(travelLocations.map(loc => {
+        const parts = loc.name.split(',');
+        const location = parts[parts.length - 1].trim();
+        // List of US states to exclude from country count
+        const usStates = [
+            'California', 'Massachusetts', 'Alaska', 'Nebraska', 'Missouri',
+            'Kentucky', 'Florida', 'New York', 'Michigan', 'South Carolina',
+            'Pennsylvania', 'D.C.', 'US Virgin Islands'
+        ];
+        // Only count if it's not a US state
+        return usStates.includes(location) ? null : location;
+    }).filter(Boolean)).size;
+
+    // Calculate total cities explored
     const citiesExplored = travelLocations.length;
+
+    // Calculate continents visited
+    const continentMap = {
+        'California': 'North America',
+        'Massachusetts': 'North America',
+        'Alaska': 'North America',
+        'Nebraska': 'North America',
+        'Missouri': 'North America',
+        'Kentucky': 'North America',
+        'Florida': 'North America',
+        'New York': 'North America',
+        'Michigan': 'North America',
+        'South Carolina': 'North America',
+        'Pennsylvania': 'North America',
+        'District of Columbia': 'North America',
+        'Italy': 'Europe',
+        'England': 'Europe',
+        'Greece': 'Europe',
+        'Puerto Rico': 'North America',
+        'US Virgin Islands': 'North America',
+        'Mexico': 'North America'
+    };
+
     const continents = new Set(travelLocations.map(loc => {
-        // This is a simplified version - you might want to add actual continent data
-        const country = loc.name.split(',')[1].trim();
-        // Add logic to determine continent based on country
-        return "Asia"; // Placeholder
+        const parts = loc.name.split(',');
+        const location = parts[parts.length - 1].trim();
+        return continentMap[location] || 'Unknown';
     })).size;
 
     // Update the stats in the DOM
