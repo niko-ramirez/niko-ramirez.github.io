@@ -3539,7 +3539,7 @@ img {
 
 /* Featured Post Section */
 .featured-post-container {
-    padding: 2em;
+    padding: 1em;
     background: #f8f9fa;
 }
 
@@ -3551,7 +3551,7 @@ img {
 .featured-post .post-image {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 12px;
     overflow: hidden;
     background-color: #f8f9fa;
@@ -3559,8 +3559,15 @@ img {
 
 .featured-post .post-image img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .featured-post .post-image {
+        height: 200px;
+    }
 }
 
 .featured-post .post-overlay {
@@ -3639,6 +3646,10 @@ img {
     
     .featured-post p {
         font-size: 1rem;
+    }
+
+    .featured-post .post-image {
+        padding-top: 56.25%; /* Maintain 16:9 ratio on mobile */
     }
 }
 
