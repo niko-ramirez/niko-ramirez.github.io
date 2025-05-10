@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nicholas Ramirez | Travel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Travel experiences of Nicholas Ramirez" />
+    <meta name="keywords" content="Nicholas Ramirez, Travel, Destinations, World Map" />
+    <meta name="author" content="Nicholas Ramirez" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Nicholas Ramirez | Travel" />
+    <meta property="og:description" content="Travel experiences of Nicholas Ramirez" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://niko-ramirez.github.io/travel" />
+    <meta property="og:image" content="https://niko-ramirez.github.io/images/my_headshot.jpg" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/main.js" as="script">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../css/flexslider.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Modernizr JS -->
+    <script src="../js/modernizr-2.6.2.min.js" defer></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="colorlib-page">
+        <div class="container-wrap">
+            <!-- Navbar Toggle Button -->
+            <button class="js-colorlib-nav-toggle colorlib-nav-toggle" aria-label="Toggle Navigation Menu">
+                <span class="sr-only">Toggle Navigation</span>
+                <span></span>
+            </button>
+
+            <!-- Left navbar -->
+            <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+                <div class="text-center">
+                    <div class="author-img" style="background-image: url(../references/images/my_headshot.jpg);" role="img" aria-label="Nicholas Ramirez's headshot"></div>
+                    <h1 id="colorlib-logo"><a href="../index.html">Nicholas Ramirez</a></h1>
+                    <span class="position">SWE | MIT '22</span>
+                </div>
+                <!-- Navbar Items -->
+                <nav id="colorlib-main-menu" role="navigation" class="navbar">
+                    <div id="navbar" class="collapse">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../about">About</a></li>
+                            <li><a href="../projects">Projects</a></li>
+                            <li><a href="../education">Education</a></li>
+                            <li><a href="../blog">Blog</a></li>
+                            <li class="active"><a href="travel.html">Travel</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Navbar Footer -->
+                <div class="colorlib-footer">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a></li>
+                        <li><a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a></li>
+                        <li><a href="mailto:nicholas.ray.ramirez@gmail.com" aria-label="Send Email"><i class="icon-mail"></i></a></li>
+                        <li><a href="../images/Nicholas_Ramirez_Resume.pdf" aria-label="Download Resume"><i class="icon-attachment"></i></a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div id="colorlib-main">
+                <section class="colorlib-travel">
+                    <div class="colorlib-narrow-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="col-md-12">
+                                        <div class="about-desc">
+                                            <span class="heading-meta">My Travel Journey</span>
+                                            <h2 class="colorlib-heading">Places I've Explored</h2>
+                                            <p>Explore the map below to see all the places I've visited around the world. Each marker represents a location I've been to, and clicking on them will show more details about my experience there.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Map -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="travel-map" class="animate-box" data-animate-effect="fadeInLeft"></div>
+                            </div>
+                        </div>
+
+                        <!-- Travel Stats -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="travel-stats animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stat-box">
+                                                <h3>Countries Visited</h3>
+                                                <p class="stat-number">12</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-box">
+                                                <h3>Cities Explored</h3>
+                                                <p class="stat-number">25</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="stat-box">
+                                                <h3>Continents</h3>
+                                                <p class="stat-number">4</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Travel Highlights -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="travel-highlights animate-box" data-animate-effect="fadeInLeft">
+                                    <h3>Travel Highlights</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="highlight-card">
+                                                <img src="../references/images/greece.jpg" alt="Travel Highlight 1">
+                                                <h4>Coming Soon</h4>
+                                                <p>Greece Trip .</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="highlight-card">
+                                                <img src="../references/images/alaska.jpg" alt="Travel Highlight 1">
+                                                <h4>Coming Soon</h4>
+                                                <p>Alaska Trip.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="highlight-card">
+                                                <img src="../references/images/island_hopping.jpg" alt="Travel Highlight 1">
+                                                <h4>Coming Soon</h4>
+                                                <p>Puerto Rico and Island Hoppping .</p>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="../js/jquery.flexslider-min.js"></script>
+    <!-- Owl carousel -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <!-- Counters -->
+    <script src="../js/jquery.countTo.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Travel Map JS -->
+    <script src="../js/travel-map.js"></script>
+    <!-- MAIN JS -->
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html> 
