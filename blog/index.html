@@ -85,52 +85,145 @@
             </aside>
 
             <div id="colorlib-main">
-                <section class="colorlib-blog">
-                    <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                                    <div class="col-md-12">
-                                        <div class="about-desc">
-                                            <span class="heading-meta">Blog</span>
-                                            <h2 class="colorlib-heading">My Blog</h2>
-                                            <p>Welcome to my blog where I share my thoughts and experiences in machine learning, software engineering, and more.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                                        <div class="blog-entry">
-                                            <div class="blog-desc">
-                                                <h3>Coming Soon</h3>
-                                                <p>Stay tuned for upcoming blog posts about my research, projects, and experiences in the field of computer science.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Blog Hero Section -->
+                <section class="blog-hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Niko's Blog</h1>
+                        <p class="hero-subtitle">Articulating half-baked thoughts on tech, news, and more</p>
+                        <div class="hero-search">
+                            <div class="search-wrapper">
+                                <i class="icon-search"></i>
+                                <input type="text" class="search-input" placeholder="Search articles...">
                             </div>
                         </div>
                     </div>
                 </section>
+
+                <!-- Featured Post Section -->
+                <section class="featured-post-container">
+                    <div class="featured-post">
+                        <div class="post-image">
+                            <img src="../references/images/healthcare-usa.jpeg" alt="Featured Post">
+                            <div class="post-overlay">
+                                <span class="post-category">Healthcare in the US</span>
+                                <h2>Coming Soon: Diagnosing the US Healthcare System</h2>
+                                expensive, complicated, dysfunctional — and broken
+                                <p>Exploring the broken healthcare system costing the US billions.</p>
+                                <a href="posts/healthcare-usa.html" class="read-more">Read More <i class="icon-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blog Posts Section -->
+                <section class="blog-posts-container">
+                    <div class="blog-posts-grid">
+                        <!-- First Blog Post -->
+                        <article class="blog-post">
+                            <div class="post-image">
+                                <img src="../references/images/making-public-policy.jpeg" alt="Machine Learning Basics">
+                                <div class="post-category">US Policy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">October 16, 2018</span>
+                                    <span class="post-read-time">15 min read</span>
+                                </div>
+                                <h2 class="post-title">Overcoming Goliath - Gun Reform in the US</h2>
+                                <p class="post-excerpt"> Why the US presents a unique challenge to gun control reform</p>
+                                <a href="posts/gun-reform.html" class="read-more">Read More <i class="icon-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Second Blog Post -->
+                        <!-- <article class="blog-post">
+                            <div class="post-image">
+                                <img src="../references/images/making-public-policy.jpeg" alt="Software Architecture">
+                                <div class="post-category">Software Engineering</div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">March 10, 2024</span>
+                                    <span class="post-read-time">8 min read</span>
+                                </div>
+                                <h2 class="post-title">Modern Software Architecture Patterns</h2>
+                                <p class="post-excerpt">Discover the latest trends in software architecture, including microservices, event-driven design, and cloud-native patterns.</p>
+                                <a href="posts/healthcare-usa.html" class="read-more">Read More <i class="icon-arrow-right"></i></a>
+                            </div>
+                        </article> -->
+                    </div>
+                </section>
+
             </div>
         </div>
     </div>
 
-    <!-- jQuery -->
+    <!-- Scripts -->
     <script src="../js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
     <script src="../js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
     <script src="../js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
     <script src="../js/jquery.waypoints.min.js"></script>
-    <!-- Flexslider -->
     <script src="../js/jquery.flexslider-min.js"></script>
-    <!-- Owl carousel -->
     <script src="../js/owl.carousel.min.js"></script>
-    <!-- Counters -->
     <script src="../js/jquery.countTo.js"></script>
-    <!-- MAIN JS -->
-    <script src="../js/main.js" defer></script>
+    <script src="../js/main.js"></script>
+
+    <!-- Blog Search Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.querySelector('.search-input');
+        const blogPosts = document.querySelectorAll('.blog-post');
+        const featuredPost = document.querySelector('.featured-post');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            // Search through blog posts
+            blogPosts.forEach(post => {
+                const title = post.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                const category = post.querySelector('.post-category').textContent.toLowerCase();
+                
+                const isVisible = title.includes(searchTerm) || 
+                                excerpt.includes(searchTerm) || 
+                                category.includes(searchTerm);
+                
+                post.style.display = isVisible ? 'flex' : 'none';
+            });
+
+            // Search through featured post
+            if (featuredPost) {
+                const featuredTitle = featuredPost.querySelector('h2').textContent.toLowerCase();
+                const featuredExcerpt = featuredPost.querySelector('p').textContent.toLowerCase();
+                const featuredCategory = featuredPost.querySelector('.post-category').textContent.toLowerCase();
+                
+                const isVisible = featuredTitle.includes(searchTerm) || 
+                                featuredExcerpt.includes(searchTerm) || 
+                                featuredCategory.includes(searchTerm);
+                
+                featuredPost.style.display = isVisible ? 'block' : 'none';
+            }
+
+            // Show/hide "no results" message
+            const visiblePosts = document.querySelectorAll('.blog-post[style="display: flex"]');
+            const visibleFeatured = featuredPost && featuredPost.style.display !== 'none';
+            
+            let noResultsMsg = document.querySelector('.no-results-message');
+            if (!visiblePosts.length && !visibleFeatured) {
+                if (!noResultsMsg) {
+                    noResultsMsg = document.createElement('div');
+                    noResultsMsg.className = 'no-results-message';
+                    noResultsMsg.innerHTML = `
+                        <p>No posts found matching "${searchTerm}"</p>
+                        <p>Try different keywords or browse all posts</p>
+                    `;
+                    document.querySelector('.blog-posts-grid').appendChild(noResultsMsg);
+                }
+            } else if (noResultsMsg) {
+                noResultsMsg.remove();
+            }
+        });
+    });
+    </script>
 </body>
 </html> 
