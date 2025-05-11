@@ -64,14 +64,59 @@
 
 <body>
 	<div id="colorlib-page">
-		<div class="container-wrap">
-			<!-- Navbar Toggle Button -->
-			<button class="js-colorlib-nav-toggle colorlib-nav-toggle" aria-label="Toggle Navigation Menu">
-				<span class="sr-only">Toggle Navigation</span>
-				<span></span>
-			</button>
+		<!-- New Mobile Navbar -->
+		<nav class="mobile-nav">
+			<div class="mobile-nav-header">
+				<a href="index.html" class="mobile-nav-brand">
+					<img src="references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+					<div>
+						<h1>Nicholas Ramirez</h1>
+						<span>SWE | MIT '22</span>
+					</div>
+				</a>
+				<button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+			</div>
+		</nav>
 
-			<!-- Left navbar -->
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<div class="mobile-menu-header">
+				<div class="mobile-menu-profile">
+					<img src="references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+					<div class="mobile-menu-profile-info">
+						<h2>Nicholas Ramirez</h2>
+						<span>SWE | MIT '22</span>
+					</div>
+				</div>
+				<button class="mobile-menu-close" aria-label="Close Menu">×</button>
+			</div>
+			<div class="mobile-menu-content">
+				<ul>
+					<li class="active"><a href="index.html"><i class="icon-home"></i>Home</a></li>
+					<li><a href="about"><i class="icon-user"></i>About</a></li>
+					<li><a href="projects"><i class="icon-code"></i>Projects</a></li>
+					<li><a href="education"><i class="icon-study"></i>Education</a></li>
+					<li><a href="blog"><i class="icon-pen"></i>Blog</a></li>
+					<li><a href="travel"><i class="icon-map"></i>Travel</a></li>
+				</ul>
+				<div class="mobile-social-links">
+					<a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a>
+					<a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a>
+					<a href="mailto:nicholas.ray.ramirez@gmail.com" aria-label="Send Email"><i class="icon-mail"></i></a>
+					<a href="images/Nicholas_Ramirez_Resume.pdf" aria-label="Download Resume"><i class="icon-attachment"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu Overlay -->
+		<div class="mobile-menu-overlay"></div>
+
+		<div class="container-wrap">
+			<!-- Desktop Sidebar -->
 			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 				<div class="text-center">
 					<div class="author-img" style="background-image: url(references/images/my_headshot.jpg);" role="img" aria-label="Nicholas Ramirez's headshot"></div>
@@ -136,7 +181,7 @@
 									</div>
 									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 										<div class="services color-3">
-											<span class="icon2"><i class="icon-graduation-cap"></i></span>
+											<span class="icon2"><i class="icon-study"></i></span>
 											<h3>Education</h3>
 											<p>Discover my academic journey, achievements, and areas of expertise</p>
 											<a href="education" class="btn btn-primary">Learn More</a>
@@ -144,7 +189,7 @@
 									</div>
 									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 										<div class="services color-4">
-											<span class="icon2"><i class="icon-pencil2"></i></span>
+											<span class="icon2"><i class="icon-pen"></i></span>
 											<h3>Blog</h3>
 											<p>Read about my experiences, insights, and thoughts on technology</p>
 											<a href="blog" class="btn btn-primary">Read Blog</a>
@@ -168,7 +213,7 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->

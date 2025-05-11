@@ -173,3 +173,46 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
+
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+	const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+	const mobileMenu = document.querySelector('.mobile-menu');
+	const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+	const mobileMenuClose = document.querySelector('.mobile-menu-close');
+	const body = document.body;
+
+	function toggleMenu() {
+		mobileMenuBtn.classList.toggle('active');
+		mobileMenu.classList.toggle('active');
+		mobileMenuOverlay.classList.toggle('active');
+		body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+	}
+
+	if (mobileMenuBtn && mobileMenu && mobileMenuOverlay) {
+		mobileMenuBtn.addEventListener('click', toggleMenu);
+		mobileMenuOverlay.addEventListener('click', toggleMenu);
+		
+		// Add close button functionality
+		if (mobileMenuClose) {
+			mobileMenuClose.addEventListener('click', toggleMenu);
+		}
+
+		// Close menu when clicking a link
+		const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+		mobileMenuLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				if (mobileMenu.classList.contains('active')) {
+					toggleMenu();
+				}
+			});
+		});
+
+		// Close menu on window resize if open
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+				toggleMenu();
+			}
+		});
+	}
+});
