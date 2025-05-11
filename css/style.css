@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 .about-hero {
     background: linear-gradient(135deg, #8EB8E5 0%, #1B5299 75%);
     color: white;
-    padding: 6rem 0;
+    padding: 4rem 0;
     text-align: center;
     margin-bottom: 4rem;
     clear: both;
@@ -2452,7 +2452,7 @@ body.offcanvas {
 .about-hero {
     background: linear-gradient(135deg, #8EB8E5 0%, #1B5299 75%);
     color: white;
-    padding: 6rem 0;
+    padding: 4rem 0;
     text-align: center;
     margin-bottom: 4rem;
 }
