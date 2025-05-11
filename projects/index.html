@@ -47,13 +47,58 @@
 
 <body>
     <div id="colorlib-page">
-        <div class="container-wrap">
-            <!-- Navbar Toggle Button -->
-            <button class="js-colorlib-nav-toggle colorlib-nav-toggle" aria-label="Toggle Navigation Menu">
-                <span class="sr-only">Toggle Navigation</span>
-                <span></span>
-            </button>
+        <!-- New Mobile Navbar -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <a href="../index.html" class="mobile-nav-brand">
+                    <img src="../references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+                    <div>
+                        <h1>Nicholas Ramirez</h1>
+                        <span>SWE | MIT '22</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
 
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-profile">
+                    <img src="../references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+                    <div class="mobile-menu-profile-info">
+                        <h2>Nicholas Ramirez</h2>
+                        <span>SWE | MIT '22</span>
+                    </div>
+                </div>
+                <button class="mobile-menu-close" aria-label="Close Menu">×</button>
+            </div>
+            <div class="mobile-menu-content">
+                <ul>
+                    <li><a href="../index.html"><i class="icon-home"></i>Home</a></li>
+                    <li><a href="../about"><i class="icon-user"></i>About</a></li>
+                    <li class="active"><a href="../projects"><i class="icon-code"></i>Projects</a></li>
+                    <li><a href="../education"><i class="icon-graduation-cap"></i>Education</a></li>
+                    <li><a href="../blog"><i class="icon-pencil2"></i>Blog</a></li>
+                    <li><a href="../travel"><i class="icon-map"></i>Travel</a></li>
+                </ul>
+                <div class="mobile-social-links">
+                    <a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a>
+                    <a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a>
+                    <a href="mailto:nicholas.ray.ramirez@gmail.com" aria-label="Send Email"><i class="icon-mail"></i></a>
+                    <a href="../references/pdf/Nicholas_Ramirez_Resume.pdf" aria-label="Download Resume"><i class="icon-attachment"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay"></div>
+
+        <div class="container-wrap">
             <!-- Left navbar -->
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
