@@ -41,6 +41,10 @@
     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Bookshelf style -->
+    <link rel="stylesheet" href="../css/bookshelf.css">
+    <!-- Education style -->
+    <link rel="stylesheet" href="../css/education.css">
     <!-- Modernizr JS -->
     <script src="../js/modernizr-2.6.2.min.js" defer></script>
 </head>
@@ -133,69 +137,163 @@
             <div id="colorlib-main">
                 <section class="colorlib-education">
                     <div class="colorlib-narrow-content">
+                        <!-- Education Hero Section -->
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-                                    <div class="col-md-12">
-                                        <div class="about-desc">
-                                            <span class="heading-meta">Education</span>
-                                            <h2 class="colorlib-heading">My Education</h2>
-                                            <p>Here's a summary of my educational background and achievements.</p>
+                                <div class="education-hero animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="education-hero-content">
+                                        <span class="heading-meta">Education</span>
+                                        <h2 class="education-hero-title">My Educational Journey</h2>
+                                        <p class="education-hero-subtitle">A comprehensive overview of my academic background, teaching experience, and continuous learning journey.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Timeline -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="education-timeline animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="timeline-item">
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <h3>Massachusetts Institute of Technology</h3>
+                                                <span class="timeline-date">2018 - Present</span>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div class="degree">
+                                                    <h4>Master of Engineering in Computer Science</h4>
+                                                    <p class="degree-details">Expected 2024</p>
+                                                    <p class="degree-focus">Focus: Machine Learning and Software Engineering</p>
+                                                </div>
+                                                <div class="degree">
+                                                    <h4>Bachelor of Science in Electrical Engineering and Computer Science</h4>
+                                                    <p class="degree-details">2022</p>
+                                                    <p class="degree-focus">Minor: Music</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                                        <div class="fancy-collapse-panel">
-                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingOne">
-                                                        <h4 class="panel-title">
-                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Massachusetts Institute of Technology (MIT)</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                        <div class="panel-body">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <p><strong>Master of Engineering in Computer Science</strong><br>
-                                                                    Expected 2024<br>
-                                                                    Focus: Machine Learning and Software Engineering</p>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <p><strong>Bachelor of Science in Electrical Engineering and Computer Science</strong><br>
-                                                                    2022<br>
-                                                                    Minor: Music</p>
-                                                                </div>
-                                                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Teaching Experience -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="teaching-experience animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="section-header">
+                                        <h3>Teaching Experience</h3>
+                                        <p>Sharing knowledge and mentoring the next generation of engineers</p>
+                                    </div>
+                                    <div class="teaching-grid">
+                                        <div class="teaching-item">
+                                            <div class="teaching-icon">
+                                                <i class="icon-code"></i>
+                                            </div>
+                                            <div class="teaching-content">
+                                                <h4>6.101 - Fundamentals of Programming</h4>
+                                                <p class="teaching-role">Teaching Assistant</p>
+                                                <p class="teaching-period">2023 - Present</p>
+                                                <p class="teaching-description">Teaching core programming concepts and best practices to undergraduate students.</p>
+                                            </div>
+                                        </div>
+                                        <div class="teaching-item">
+                                            <div class="teaching-icon">
+                                                <i class="icon-brain"></i>
+                                            </div>
+                                            <div class="teaching-content">
+                                                <h4>6.390 - Introduction to Machine Learning</h4>
+                                                <p class="teaching-role">Teaching Assistant</p>
+                                                <p class="teaching-period">2022 - 2023</p>
+                                                <p class="teaching-description">Guiding students through fundamental machine learning concepts and applications.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Virtual Bookshelf -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="bookshelf-section animate-box" data-animate-effect="fadeInLeft">
+                                    <div class="section-header">
+                                        <h3>Virtual Bookshelf</h3>
+                                        <p>My collection of educational resources and materials</p>
+                                    </div>
+                                    <div class="bookshelf-categories">
+                                        <!-- Computer Science & Engineering -->
+                                        <div class="bookshelf-category">
+                                            <h4>Computer Science & Engineering</h4>
+                                            <div class="book-grid">
+                                                <div class="book-item" style="--item-index: 0">
+                                                    <div class="book-cover">
+                                                        <img src="../references/images/books/clean-code.jpg" alt="Clean Code by Robert C. Martin">
+                                                        <div class="book-info">
+                                                            <h5>Clean Code</h5>
+                                                            <p class="author">Robert C. Martin</p>
+                                                            <span class="status completed">Completed</span>
+                                                            <p class="description">A handbook of agile software craftsmanship that helps you write better, more maintainable code.</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingTwo">
-                                                        <h4 class="panel-title">
-                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Teaching Experience</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                        <div class="panel-body">
-                                                            <p><strong>6.101 (Fundamentals of Programming)</strong><br>
-                                                            Teaching Assistant, 2023-Present</p>
-                                                            <p><strong>6.390 (Introduction to Machine Learning)</strong><br>
-                                                            Teaching Assistant, 2022-2023</p>
+                                                <div class="book-item" style="--item-index: 1">
+                                                    <div class="book-cover">
+                                                        <img src="../references/images/books/design-patterns.jpg" alt="Design Patterns by Gang of Four">
+                                                        <div class="book-info">
+                                                            <h5>Design Patterns</h5>
+                                                            <p class="author">Gang of Four</p>
+                                                            <span class="status in-progress">In Progress</span>
+                                                            <p class="description">Essential patterns for object-oriented software design and development.</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingThree">
-                                                        <h4 class="panel-title">
-                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Awards & Honors</a>
-                                                        </h4>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mathematics & Science -->
+                                        <div class="bookshelf-category">
+                                            <h4>Mathematics & Science</h4>
+                                            <div class="book-grid">
+                                                <div class="book-item" style="--item-index: 2">
+                                                    <div class="book-cover">
+                                                        <img src="../references/images/books/linear-algebra.jpg" alt="Linear Algebra Done Right by Sheldon Axler">
+                                                        <div class="book-info">
+                                                            <h5>Linear Algebra Done Right</h5>
+                                                            <p class="author">Sheldon Axler</p>
+                                                            <span class="status completed">Completed</span>
+                                                            <p class="description">A clear and concise introduction to linear algebra with a focus on understanding concepts.</p>
+                                                        </div>
                                                     </div>
-                                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                        <div class="panel-body">
-                                                            <p>Hispanic Scholarship Fund Scholar</p>
-                                                            <p>MIT Dean's List</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Course Materials -->
+                                        <div class="bookshelf-category">
+                                            <h4>Course Materials</h4>
+                                            <div class="book-grid">
+                                                <div class="book-item" style="--item-index: 3">
+                                                    <div class="book-cover">
+                                                        <img src="../references/images/books/machine-learning.jpg" alt="Introduction to Machine Learning - MIT 6.390">
+                                                        <div class="book-info">
+                                                            <h5>Introduction to Machine Learning</h5>
+                                                            <p class="author">MIT 6.390</p>
+                                                            <span class="status teaching">Teaching</span>
+                                                            <p class="description">Course materials and resources for teaching fundamental machine learning concepts.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="book-item" style="--item-index: 4">
+                                                    <div class="book-cover">
+                                                        <img src="../references/images/books/programming.jpg" alt="Fundamentals of Programming - MIT 6.101">
+                                                        <div class="book-info">
+                                                            <h5>Fundamentals of Programming</h5>
+                                                            <p class="author">MIT 6.101</p>
+                                                            <span class="status teaching">Teaching</span>
+                                                            <p class="description">Core programming concepts and best practices for undergraduate students.</p>
                                                         </div>
                                                     </div>
                                                 </div>
