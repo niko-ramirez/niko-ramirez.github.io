@@ -3357,6 +3357,9 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2em;
     margin-top: 2em;
+    padding: 0 1em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -3368,18 +3371,22 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-content {
+    padding: 1.5em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-content {
-    padding: 2em;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .project-content h3 {
@@ -3433,29 +3440,27 @@ img {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .colorlib-projects {
-        padding: 3em 0;
-    }
-
-    .colorlib-narrow-content {
-        padding: 0 1.5em;
-    }
-
     .project-grid {
         grid-template-columns: 1fr;
         gap: 1.5em;
+        padding: 0 1em;
     }
-
+    
+    .project-card {
+        min-height: auto;
+        margin: 0;
+    }
+    
     .project-content {
-        padding: 1.5em;
+        padding: 1.2em;
     }
-
+    
     .project-content h3 {
         font-size: 1.3em;
     }
-
-    .filter-buttons {
-        justify-content: center;
+    
+    .colorlib-narrow-content {
+        padding: 0 1em;
     }
 }
 
@@ -4746,4 +4751,62 @@ img {
   #colorlib-main .colorlib-about {
     padding-top: 140px;
   }
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    padding: 2em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        padding: 0 1em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .project-card {
+        min-height: auto;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .project-content {
+        padding: 1.2em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .project-content h3 {
+        font-size: 1.3em;
+    }
+    
+    .colorlib-narrow-content {
+        padding: 0 1em;
+    }
 }
