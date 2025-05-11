@@ -4696,3 +4696,44 @@ img {
     transform: translateX(0);
   }
 }
+
+.mobile-menu-header {
+  padding: 20px;
+  background: #1B5299;
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.mobile-menu-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 40px; /* Make space for the close button */
+}
+
+@media screen and (max-width: 768px) {
+  .colorlib-about {
+    padding-top: 100px; /* Add padding at the top for mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #colorlib-main .colorlib-about {
+    padding-top: 140px;
+  }
+}
