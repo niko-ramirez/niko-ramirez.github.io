@@ -179,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 	const mobileMenu = document.querySelector('.mobile-menu');
 	const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+	const mobileMenuClose = document.querySelector('.mobile-menu-close');
 	const body = document.body;
 
 	function toggleMenu() {
@@ -191,6 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	if (mobileMenuBtn && mobileMenu && mobileMenuOverlay) {
 		mobileMenuBtn.addEventListener('click', toggleMenu);
 		mobileMenuOverlay.addEventListener('click', toggleMenu);
+		
+		// Add close button functionality
+		if (mobileMenuClose) {
+			mobileMenuClose.addEventListener('click', toggleMenu);
+		}
 
 		// Close menu when clicking a link
 		const mobileMenuLinks = mobileMenu.querySelectorAll('a');
