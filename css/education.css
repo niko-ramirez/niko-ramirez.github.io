@@ -2,11 +2,8 @@
 
 /* Education Hero Section */
 .education-hero {
+    margin-bottom: 4rem;
     position: relative;
-    padding: 6rem 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    overflow: hidden;
 }
 
 .education-hero::before {
@@ -14,39 +11,44 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../references/images/pattern.svg') center/cover;
-    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.03) 0%, rgba(var(--secondary-color-rgb), 0.03) 100%);
+    z-index: -1;
+    border-radius: 12px;
 }
 
 .education-hero-content {
-    position: relative;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    z-index: 1;
+    padding: 3rem 2rem;
 }
 
 .education-hero .heading-meta {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: var(--primary-color);
+    font-weight: 500;
     margin-bottom: 1rem;
-    opacity: 0.9;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: 30px;
 }
 
 .education-hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    color: var(--text-color);
     margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
 }
 
 .education-hero-subtitle {
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
     line-height: 1.6;
 }
 
@@ -183,8 +185,8 @@
 }
 
 .section-header {
-    margin-bottom: 3.5rem;
     text-align: center;
+    margin-bottom: 3.5rem;
     position: relative;
 }
 
@@ -204,21 +206,22 @@
     font-size: 2rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     position: relative;
     display: inline-block;
 }
 
 .section-header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .teaching-grid {
     display: grid;
-    gap: 3rem;
+    gap: 2.5rem;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -227,6 +230,7 @@
     padding-left: 2.5rem;
     border-left: 2px solid var(--primary-color);
     position: relative;
+    transition: transform 0.3s ease;
 }
 
 .teaching-item::before {
@@ -242,9 +246,23 @@
     box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb), 0.1);
 }
 
+.teaching-icon {
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+}
+
 .teaching-content {
     margin-left: 1rem;
-    position: relative;
 }
 
 .teaching-content h4 {
@@ -252,15 +270,14 @@
     font-weight: 500;
     color: var(--text-color);
     margin-bottom: 0.75rem;
-    position: relative;
-    display: inline-block;
+    line-height: 1.3;
 }
 
 .teaching-role {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary-color);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     display: inline-block;
     padding: 0.25rem 0.75rem;
     background: rgba(var(--primary-color-rgb), 0.1);
@@ -268,9 +285,9 @@
 }
 
 .teaching-period {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -278,15 +295,13 @@
 
 .teaching-period::before {
     content: '📅';
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .teaching-description {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.7;
-    padding-left: 1rem;
-    border-left: 2px solid rgba(var(--primary-color-rgb), 0.1);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* Awards Section */
@@ -619,6 +634,38 @@
     .teaching-description {
         font-size: 1rem;
         padding-left: 0.75rem;
+    }
+
+    .education-hero-title {
+        font-size: 2rem;
+    }
+
+    .education-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-header h3 {
+        font-size: 1.75rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .teaching-content h4 {
+        font-size: 1.25rem;
+    }
+
+    .teaching-role {
+        font-size: 0.95rem;
+    }
+
+    .teaching-period {
+        font-size: 0.95rem;
+    }
+
+    .teaching-description {
+        font-size: 1rem;
     }
 }
 
