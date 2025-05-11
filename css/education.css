@@ -2,8 +2,9 @@
 
 /* Education Hero Section */
 .education-hero {
-    margin-bottom: 4rem;
     position: relative;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
 }
 
 .education-hero::before {
@@ -645,10 +646,14 @@
         font-size: 1rem;
     }
 
+    .education-hero {
+        padding-top: 5rem;
+    }
+    
     .education-hero-title {
         font-size: 2rem;
     }
-
+    
     .education-hero-subtitle {
         font-size: 1.1rem;
     }
