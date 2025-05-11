@@ -4890,3 +4890,90 @@ img {
 	font-size: 16px;
 	line-height: 1.8;
 }
+
+/* Virtual Bookshelf Styles */
+.bookshelf-categories {
+    margin-top: 2rem;
+}
+
+.bookshelf-category {
+    margin-bottom: 3rem;
+}
+
+.bookshelf-category h4 {
+    color: #2c98f0;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.book-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.book-info {
+    padding: 1rem;
+}
+
+.book-info h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.book-info .author {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.book-info .status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.book-info .status:contains("Completed") {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.book-info .status:contains("In Progress") {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+@media screen and (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .book-item img {
+        height: 200px;
+    }
+}
