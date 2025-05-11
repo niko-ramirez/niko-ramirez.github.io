@@ -47,13 +47,58 @@
 
 <body>
     <div id="colorlib-page">
-        <div class="container-wrap">
-            <!-- Navbar Toggle Button -->
-            <button class="js-colorlib-nav-toggle colorlib-nav-toggle" aria-label="Toggle Navigation Menu">
-                <span class="sr-only">Toggle Navigation</span>
-                <span></span>
-            </button>
+        <!-- New Mobile Navbar -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <a href="../../index.html" class="mobile-nav-brand">
+                    <img src="../../references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+                    <div>
+                        <h1>Nicholas Ramirez</h1>
+                        <span>SWE | MIT '22</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
 
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-profile">
+                    <img src="../../references/images/my_headshot.jpg" alt="Nicholas Ramirez">
+                    <div class="mobile-menu-profile-info">
+                        <h2>Nicholas Ramirez</h2>
+                        <span>SWE | MIT '22</span>
+                    </div>
+                </div>
+                <button class="mobile-menu-close" aria-label="Close Menu">×</button>
+            </div>
+            <div class="mobile-menu-content">
+                <ul>
+                    <li><a href="../../index.html"><i class="icon-home"></i>Home</a></li>
+                    <li><a href="../../about"><i class="icon-user"></i>About</a></li>
+                    <li><a href="../../projects"><i class="icon-code"></i>Projects</a></li>
+                    <li><a href="../../education"><i class="icon-study"></i>Education</a></li>
+                    <li class="active"><a href="../"><i class="icon-pen"></i>Blog</a></li>
+                    <li><a href="../../travel"><i class="icon-map"></i>Travel</a></li>
+                </ul>
+                <div class="mobile-social-links">
+                    <a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a>
+                    <a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a>
+                    <a href="mailto:nicholas.ray.ramirez@gmail.com" aria-label="Send Email"><i class="icon-mail"></i></a>
+                    <a href="../../references/pdfs/Nicholas_Ramirez_Resume.pdf" aria-label="Download Resume"><i class="icon-attachment"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay"></div>
+
+        <div class="container-wrap">
             <!-- Left navbar -->
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
@@ -70,6 +115,7 @@
                             <li><a href="../../projects">Projects</a></li>
                             <li><a href="../../education">Education</a></li>
                             <li class="active"><a href="../">Blog</a></li>
+                            <li><a href="../../travel/">Travel</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -213,125 +259,17 @@
     <script src="../../js/owl.carousel.min.js"></script>
     <script src="../../js/jquery.countTo.js"></script>
     <script src="../../js/main.js"></script>
+
+    <style>
+    @media (max-width: 768px) {
+        .blog-post-full {
+            padding-top: 120px;
+        }
+        
+        .blog-post-full .post-header {
+            padding-top: 40px;
+        }
+    }
+    </style>
 </body>
 </html>
-
-<!-- In the recent wake of yet another mass shooting within the United States, there has been a
-wave to push forward stricter gun control reforms within Congress. Given the long history of gun
-control in the United States, the push for gun control reforms is nothing out of the ordinary.
-However, it appears this time is different as a group of high school students, who were victims of
-the most recent mass shooting, are refusing to be pushed aside. The issue of mass shootings and
-gun control is not solely a United States problem as countries such as Britain and Australia have
-endured and resolved similar issues. However, the United States has faced greater obstacles in
-passing gun control reforms than any other country. The unique obstacles faced by the United
-States to pass gun control reforms are founded in the identification of the problem, the politics
-surrounding gun control reform, and the creation and implementation of the policy itself.
-
-
-The first obstacle faced by the United States that makes gun control reform considerably
-harder is the identification of the problem’s source. The failure to agree on the problem’s source
-is due to the framing of the issue. In the United States, problems related to gun issues is framed
-by many as a neglect to mental health. In this case, the solution to stopping mass shootings
-would be focused on promoting a greater understanding of mental health. On the other hand, the
-framing of the issue from a gun control perspective is centered on guns being the problem with
-gun control as the solution. The lack of agreement, founded in a fundamental difference of
-values within the nation, leads to a massive barrier to policy. In the case of Britain and Australia,
-the quick establishing of the problem’s source as solely guns made it easier to execute gun
-control reforms. After the Dunblane shooting in Britain, the Cullen report recommended
-restrictions on handguns to promote safety (North 2013, 190); in Australia, the Prime Minister
-responded to public pressure with “a plan for strict uniform gun laws” (Peters 2013, 195). In both
-cases, the public determined and demanded gun control as the solution. 
-
-The second component
-of the failure to establish the problem is founded in the history of guns within the United States.
-One of the key players of the distribution and promotion of guns in the United States is the
-National Rifle Association. Early in history, the NRA and Britain had a similar history with the
-main purpose of guns was sport. However, a key difference was the switch in the leadership of
-the NRA where the organization turned its focus on politics, supporting the civilian right to own
-a firearm. Over time, the NRA would develop into a major political entity utilizing the argument
-of guns for self-defense. The view of self-defense with guns as reasonable is a United States
-perspective as shown in early British law which “permits the ownership of guns for which an
-appropriate reason can be demonstrated (e.g. target shooting, hunting, vermin control), but the
-reasons exclude self-protection” (North 2013, 186). The failure of gun control advocates to
-frame self-defense as an invalid reason to own guns reinforces the failure to identify, define, and
-agree on guns being the source of mass shootings. As a result, the United States are in a more
-difficult position for passing any gun control reforms compared to Australia and Britain.
-The second obstacle specific to the United States is the political environment behind the
-legislation and reformation of laws. Unlike Britain and Australia, the United States government
-is built on a Constitution where the right to bear arms is a widely accepted individual liberty. The
-Second Amendment is a major player in the passing of gun control reforms, especially after the
-Supreme Court backed the individual right to own a gun in the landmark case District of
-Colombia vs Heller (2008) (Toobin 2012). In terms of the political environment, the belief of an
-individual’s right to own guns makes passing gun control a risk for the politician. One of the
-main goals of politicians is to be reelected since the “[s]uccessful pursuit of a career requires
-continual reelection” (Mayhew 1974, 15). Therefore, passing any legislation towards the gun
-control side is too big of a risk unless the politician’s community strongly pushes for reform. In
-addition to the Second Amendment, the political makeup of the United States government makes
-the process of passing legislation more difficult and slower relative to the government of Britain
-and Australia. The parliamentary system in Britain and Australia tends to make the legislation
-process faster and easier as the executive branch is chosen from the legislative branch. Passing
-reforms in the United States is more difficult as differing political parties can be in control of the
-different branches. For example, Australia and Britain had conservative parties in control of the
-executive and legislative branch. With enough public pressure, they were able to pass long scale
-sweeping gun control reforms under a short time period. The clashing of values and beliefs
-between the executive and legislative branch in the United States leads to less reforms being
-passed, especially in the context of gun control. Lastly, status quo bias within the United States
-makes it considerably more difficult for the United States to create gun control legislature. For
-example, Australia’s status quo bias is not as strong of a force as there were strict preexisting
-regulation on handguns. Specifically, handguns were limited to security guards and pistol club
-members which means handguns only “made up only around 5% of the Australian stockpile”
-(Harding 1988). Since strict regulations were already in place in Australia, pushing more gun
-control reform over the status quo bias would be less difficult than if the United States tried to
-push similar gun control reforms. The status quo bias from the lack of strict regulation of guns in
-the United States makes passing gun control legislature much more difficult. As a result, an
-incremental approach has the possibility to lower the massive status quo bias hurdle the United
-States faces as opposed to a long scale sweeping gun control which will be more likely to fail.
-The last obstacle category that makes gun control reform considerably more difficult for
-the United States is the creation of solutions and implementation of that policy. The first barrier
-to the creation and implementation of policy of gun control reforms is the very organized gun
-rights side. In the United States, the gun control organizations are fragmented compared to the
-NRA which makes the NRA a very strong player in lobbying against any gun control reforms.
-The strong influence of the NRA to dictate policy is evident during the week of the Senate voting
-to ban high capacity magazines, the “National Rifle Association mobilized members to blanket
-the Senate with phone calls, emails and letters. The group also spent $500,000 on Wednesday
-alone, on an advertising campaign criticizing “Obama’s gun ban” and using Mayor Michael R.
-Bloomberg, a deep pocketed gun control advocate, as a foil” (Weisman 2013, 2). In addition to
-strong gun control interest groups controlling policy outcome, national mood is a major
-component of gun control reforms. Even though Britain and Australia faced opposition from
-specific groups of gun owners while implementing gun control reform, the United States faces
-national opposition every time any gun control reforms are passed. The national mood in support
-of gun control sways away every time policy is implemented. Lastly, the population of people
-and the number of guns in circulation in the United States generates limitations and conditions
-on policy itself that other countries didn’t have to account for. In Australia’s case, it was able to
-destroy about one-third of its stockpile of guns through buyback programs. However, Alpers
-points out that “if we accept a frequently cited estimate of 270 million privately owned guns in
-the United States (Karp 2007, 47), a similar effort in that country would require the destruction
-of 90 million firearms” (Alpers 2013, 207). The collection and destruction of 90 million
-firearms through a buyback program would be nearly impossible and very expensive for the
-federal government. The implementation of policies used in Australia wouldn’t be as effective in
-the United States. The vast number of firearms and the massive population makes it more
-difficult for the United States to push for gun control reforms.
-
-The context and history of gun culture in the United States develops these specific
-obstacles that other countries didn’t have to confront. As a result of these barriers in the problem,
-politics, and implementation of policy, gun control advocates should tackle the topic of gun
-control in a specific way. Firstly, a massive federal gun control reform is unlikely, and it will
-probably be undone in the next set of elections. Therefore, gun control advocates should
-approach gun control reform in a grass-roots coalition style. By focusing on uniting different
-communities in each state to create change through incrementalism, gun advocates will have the
-best chance to get gun control reformations passed. The use of grass-roots style to push forward
-a specific policy is best shown in the Arizona immigration reforms and Washington legalization
-of same-sex marriage. In the Arizona situation, “immigrant and migrant justice organizations,
-civil rights groups and groups that represented the LGBT migrant community united in response
-to the passage of anti-immigrant laws” (Mayo-Adam 2018). To counter these laws and unset the
-sheriff at that time, Arizona communities had to unite and organize together. Similarly,
-Washington LGBT, immigrant, and civil rights groups united together to start a “series of
-campaigns to pass pro-LGBT laws and pro-immigrant rights laws in the state” (Mayo-Adam
-2018). Given the successful history of grass-roots, gun control advocates should try to unite
-victims of gun violence together to pass gun control reform. There are limitations to my
-suggestions as by focusing on states, the actual gun control regulations can be nullified by nearby
-states not providing the same regulations. This is seen in the Brady bill when the proportion of
-gun homicides didn’t change, and one possible explanation was “traffickers were able to
-substitute in-state sources for out-of-state sources at little extra cost” (Cook and Ludwig 2013,
-25). The final limitation is that a policy window needs to open where the problem, politics, and
-policy line up. -->
