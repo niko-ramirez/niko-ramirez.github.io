@@ -73,13 +73,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 768px) {
-  .container-wrap {
-    display: block;
-  }
-  
   #colorlib-main {
     margin-left: 0;
     width: 100%;
+    padding-top: 300px; /* Add padding to main content area */
   }
   
   #colorlib-aside {
@@ -90,46 +87,55 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    background: #1B5299;
+    width: 100%;
     z-index: 1000;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
-  .mobile-menu {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white;
-    z-index: 999;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
+  .about-hero {
+    position: relative;
+    padding: 100px 0;
+    background: #f8f9fa;
   }
 
-  .mobile-menu-overlay {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  @media screen and (max-width: 768px) {
+    .about-hero {
+      padding-top: 120px !important;
+    }
+    
+    .about-hero .container {
+      padding-top: 40px;
+    }
+    
+    .about-hero .hero-title {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+    
+    .about-hero .hero-subtitle {
+      font-size: 1.2em;
+    }
   }
 
-  .mobile-menu.active {
-    transform: translateX(0);
+  .projects-hero,
+  .blog-hero,
+  .colorlib-about,
+  .colorlib-projects,
+  .colorlib-blog,
+  .colorlib-education {
+    padding-top: 160px;
   }
 
-  .mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
+  /* Ensure hero content is properly spaced */
+  .about-hero .container,
+  .projects-hero .container,
+  .blog-hero .container,
+  .colorlib-about .container,
+  .colorlib-projects .container,
+  .colorlib-blog .container,
+  .colorlib-education .container {
+    padding-top: 30px;
   }
 }
 
@@ -294,10 +300,12 @@ h1, h2, h3, h4, h5, h6 {
     .about-hero .hero-content {
         flex-direction: column;
         text-align: center;
+        padding-top: 250px; /* Increased from 200px to 250px */
     }
     
     .about-hero .hero-text {
         text-align: center;
+        padding-top: 20px;
     }
 }
 
@@ -2551,10 +2559,12 @@ body.offcanvas {
   .about-hero .hero-content {
     flex-direction: column;
     text-align: center;
+    padding-top: 250px; /* Increased from 200px to 250px */
   }
   
   .about-hero .hero-text {
     text-align: center;
+    padding-top: 20px;
   }
 }
 
