@@ -53,6 +53,8 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<!-- Terminal style -->
+	<link rel="stylesheet" href="css/terminal.css">
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js" defer></script>
 	<!-- FOR IE9 below -->
@@ -150,58 +152,25 @@
 			<div id="colorlib-main">
 				<section class="colorlib-about">
 					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-									<div class="col-md-12">
-										<div class="about-desc">
-											<span class="heading-meta">Welcome to My Portfolio</span>
-											<h2 class="colorlib-heading">I'm Nicholas Ramirez</h2>
-											<p>I'm a Master's student in <a href="http://dig.csail.mit.edu">DIG</a> at <a href="https://www.csail.mit.edu/">MIT CSAIL</a>, 
-												specializing in Machine Learning and Software Engineering. My research focuses on knowledge graph completion in a federated learning setting with differential privacy.</p>
-										</div>
-									</div>
+						<div class="terminal-container">
+							<div class="terminal-header">
+								<div class="terminal-buttons">
+									<span class="terminal-button close"></span>
+									<span class="terminal-button minimize"></span>
+									<span class="terminal-button maximize"></span>
 								</div>
-								<div class="row">
-									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-										<div class="services color-1">
-											<span class="icon2"><i class="icon-user"></i></span>
-											<h3>About Me</h3>
-											<p>Learn more about my background, interests, and professional journey</p>
-											<a href="about" class="btn btn-primary">Read More</a>
-										</div>
+								<div class="terminal-title">nicholas@portfolio:~</div>
+							</div>
+							<div class="terminal-content">
+								<div class="terminal-output">
+									<div class="welcome-message">
+										<p>Welcome to Nicholas Ramirez's Portfolio Terminal</p>
+										<p>Type 'help' to see available commands</p>
 									</div>
-									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-										<div class="services color-2">
-											<span class="icon2"><i class="icon-code"></i></span>
-											<h3>Projects</h3>
-											<p>Explore my research, development work, and technical contributions</p>
-											<a href="projects" class="btn btn-primary">View Projects</a>
-										</div>
-									</div>
-									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-										<div class="services color-3">
-											<span class="icon2"><i class="icon-study"></i></span>
-											<h3>Education</h3>
-											<p>Discover my academic journey, achievements, and areas of expertise</p>
-											<a href="education" class="btn btn-primary">Learn More</a>
-										</div>
-									</div>
-									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-										<div class="services color-4">
-											<span class="icon2"><i class="icon-pen"></i></span>
-											<h3>Blog</h3>
-											<p>Read about my experiences, insights, and thoughts on technology</p>
-											<a href="blog" class="btn btn-primary">Read Blog</a>
-										</div>
-									</div>
-									<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-										<div class="services color-4">
-											<span class="icon2"><i class="icon-map"></i></span>
-											<h3>Travel</h3>
-											<p>Places I've traveled</p>
-											<a href="travel" class="btn btn-primary">Visit Map</a>
-										</div>
+									<div id="terminal-history"></div>
+									<div class="terminal-input-line">
+										<span class="terminal-prompt">nicholas@portfolio:~$</span>
+										<input type="text" id="terminal-input" autofocus>
 									</div>
 								</div>
 							</div>
@@ -228,6 +197,8 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- MAIN JS -->
 	<script src="js/main.js" defer></script>
+	<!-- Terminal JS -->
+	<script src="js/terminal.js" defer></script>
 </body>
 
 </html>
