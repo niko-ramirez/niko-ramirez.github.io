@@ -300,12 +300,137 @@ Type 'book-recommendation' again for another recommendation!`;
 
             function gameOver() {
                 isGameActive = false;
+                
+                // Create game over container
+                const gameOverContainer = document.createElement('div');
+                gameOverContainer.style.position = 'absolute';
+                gameOverContainer.style.top = '50%';
+                gameOverContainer.style.left = '50%';
+                gameOverContainer.style.transform = 'translate(-50%, -50%)';
+                gameOverContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                gameOverContainer.style.padding = '20px';
+                gameOverContainer.style.borderRadius = '10px';
+                gameOverContainer.style.textAlign = 'center';
+                gameOverContainer.style.zIndex = '1000';
+                gameContainer.style.position = 'relative';
+                gameContainer.appendChild(gameOverContainer);
+
+                // Add game over text with animation
                 const gameOverText = document.createElement('div');
-                gameOverText.style.color = '#fff';
+                gameOverText.style.color = '#ff0000';
                 gameOverText.style.fontFamily = 'monospace';
-                gameOverText.style.marginTop = '10px';
-                gameOverText.textContent = `Game Over! Final Score: ${score}`;
-                gameElement.appendChild(gameOverText);
+                gameOverText.style.fontSize = '24px';
+                gameOverText.style.marginBottom = '10px';
+                gameOverText.style.textShadow = '0 0 10px #ff0000';
+                gameOverText.textContent = 'GAME OVER';
+                gameOverContainer.appendChild(gameOverText);
+
+                // Add score display
+                const finalScore = document.createElement('div');
+                finalScore.style.color = '#fff';
+                finalScore.style.fontFamily = 'monospace';
+                finalScore.style.fontSize = '18px';
+                finalScore.style.marginBottom = '15px';
+                finalScore.textContent = `Final Score: ${score}`;
+                gameOverContainer.appendChild(finalScore);
+
+                // Add restart button
+                const restartButton = document.createElement('button');
+                restartButton.textContent = 'Play Again';
+                restartButton.style.backgroundColor = '#00cc00';
+                restartButton.style.color = '#fff';
+                restartButton.style.border = 'none';
+                restartButton.style.padding = '10px 20px';
+                restartButton.style.borderRadius = '5px';
+                restartButton.style.cursor = 'pointer';
+                restartButton.style.fontFamily = 'monospace';
+                restartButton.style.fontSize = '16px';
+                restartButton.style.transition = 'all 0.3s ease';
+                restartButton.style.marginRight = '10px';
+                
+                // Add hover effect
+                restartButton.onmouseover = () => {
+                    restartButton.style.backgroundColor = '#00ff00';
+                    restartButton.style.transform = 'scale(1.1)';
+                };
+                restartButton.onmouseout = () => {
+                    restartButton.style.backgroundColor = '#00cc00';
+                    restartButton.style.transform = 'scale(1)';
+                };
+                
+                // Add click handler
+                restartButton.onclick = () => {
+                    gameContainer.remove();
+                    commands.snake();
+                };
+                
+                gameOverContainer.appendChild(restartButton);
+
+                // Add close button
+                const closeButton = document.createElement('button');
+                closeButton.textContent = 'Close Game';
+                closeButton.style.backgroundColor = '#ff4444';
+                closeButton.style.color = '#fff';
+                closeButton.style.border = 'none';
+                closeButton.style.padding = '10px 20px';
+                closeButton.style.borderRadius = '5px';
+                closeButton.style.cursor = 'pointer';
+                closeButton.style.fontFamily = 'monospace';
+                closeButton.style.fontSize = '16px';
+                closeButton.style.transition = 'all 0.3s ease';
+                
+                // Add hover effect
+                closeButton.onmouseover = () => {
+                    closeButton.style.backgroundColor = '#ff6666';
+                    closeButton.style.transform = 'scale(1.1)';
+                };
+                closeButton.onmouseout = () => {
+                    closeButton.style.backgroundColor = '#ff4444';
+                    closeButton.style.transform = 'scale(1)';
+                };
+                
+                // Add click handler
+                closeButton.onclick = () => {
+                    gameContainer.remove();
+                };
+                
+                gameOverContainer.appendChild(closeButton);
+
+                // Animate the snake's death
+                const cells = grid.children;
+                let flashCount = 0;
+                const maxFlashes = 3;
+                const flashInterval = 200;
+
+                function flashSnake() {
+                    if (flashCount >= maxFlashes) {
+                        // Final state - turn snake red
+                        snake.forEach(segment => {
+                            const cellIndex = segment.y * 10 + segment.x;
+                            if (cellIndex >= 0 && cellIndex < cells.length) {
+                                cells[cellIndex].style.backgroundColor = '#ff0000';
+                            }
+                        });
+                        return;
+                    }
+
+                    // Flash between red and original colors
+                    snake.forEach((segment, index) => {
+                        const cellIndex = segment.y * 10 + segment.x;
+                        if (cellIndex >= 0 && cellIndex < cells.length) {
+                            cells[cellIndex].style.backgroundColor = 
+                                cells[cellIndex].style.backgroundColor === '#ff0000' 
+                                    ? (index === 0 ? cellStyles.head : cellStyles.snake)
+                                    : '#ff0000';
+                        }
+                    });
+
+                    flashCount++;
+                    setTimeout(flashSnake, flashInterval);
+                }
+
+                // Start the death animation
+                flashSnake();
             }
             
             // Simple keyboard handler
