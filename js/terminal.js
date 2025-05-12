@@ -49,7 +49,8 @@ contact - Get my contact information
 skills - View my technical skills
 experience - See my work experience
 resume - Download my resume
-book-recommendation - Get a random book from my reading list`;
+book-recommendation - Get a random book from my reading list
+snake - Play a simple snake game`;
         },
         about: () => {
             window.location.href = 'about';
@@ -142,11 +143,281 @@ Description: ${randomBook.description}
 
 Type 'book-recommendation' again for another recommendation!`;
         },
+        snake: () => {
+            // Create a simple game container
+            const gameContainer = document.createElement('div');
+            gameContainer.style.width = '200px';
+            gameContainer.style.height = '200px';
+            gameContainer.style.backgroundColor = '#1a1a1a';
+            gameContainer.style.border = '1px solid #333';
+            gameContainer.style.margin = '10px 0';
+            gameContainer.tabIndex = 0; // Make container focusable
+            
+            // Create a simple grid
+            const grid = document.createElement('div');
+            grid.style.display = 'grid';
+            grid.style.gridTemplateColumns = 'repeat(10, 1fr)';
+            grid.style.gridTemplateRows = 'repeat(10, 1fr)';
+            grid.style.gap = '1px';
+            grid.style.width = '100%';
+            grid.style.height = '100%';
+            
+            // Create cells with optimized styling
+            const cells = [];
+            const cellStyles = {
+                empty: '#2a2a2a',
+                snake: '#00cc00',
+                head: '#00ff00',
+                food: '#ff0000'
+            };
+            
+            for (let i = 0; i < 100; i++) {
+                const cell = document.createElement('div');
+                cell.style.backgroundColor = cellStyles.empty;
+                grid.appendChild(cell);
+                cells.push(cell);
+            }
+            
+            // Add grid to container
+            gameContainer.appendChild(grid);
+            
+            // Add container to terminal history
+            const gameElement = document.createElement('div');
+            gameElement.className = 'command-output';
+            gameElement.appendChild(gameContainer);
+            terminalHistory.appendChild(gameElement);
+
+            // Game state
+            let snake = [{x: 5, y: 5}]; // Start in middle
+            let direction = null; // No initial direction
+            let nextDirection = null; // No initial direction
+            let gameLoop;
+            let isGameActive = true;
+            let isPaused = true; // Start paused
+            let score = 0;
+            let food = null;
+            let lastUpdate = 0;
+            const updateInterval = 150; // Faster update interval
+            let hasStarted = false; // Track if game has started
+
+            // Create score display
+            const scoreDisplay = document.createElement('div');
+            scoreDisplay.style.color = '#fff';
+            scoreDisplay.style.fontFamily = 'monospace';
+            scoreDisplay.style.marginBottom = '10px';
+            scoreDisplay.textContent = 'Score: 0';
+            gameElement.insertBefore(scoreDisplay, gameContainer);
+
+            function generateFood() {
+                let newFood;
+                do {
+                    newFood = {
+                        x: Math.floor(Math.random() * 10),
+                        y: Math.floor(Math.random() * 10)
+                    };
+                } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+                food = newFood;
+            }
+
+            // Update game state
+            function updateGame(timestamp) {
+                if (!isGameActive || isPaused || !hasStarted) {
+                    requestAnimationFrame(updateGame);
+                    return;
+                }
+
+                // Throttle updates
+                if (timestamp - lastUpdate < updateInterval) {
+                    requestAnimationFrame(updateGame);
+                    return;
+                }
+                lastUpdate = timestamp;
+
+                // Update direction from buffer
+                direction = nextDirection;
+
+                // Move snake
+                const head = {...snake[0]};
+                switch(direction) {
+                    case 'up': head.y--; break;
+                    case 'down': head.y++; break;
+                    case 'left': head.x--; break;
+                    case 'right': head.x++; break;
+                }
+
+                // Check boundaries
+                if (head.x < 0 || head.x >= 10 || head.y < 0 || head.y >= 10) {
+                    gameOver();
+                    return;
+                }
+
+                // Check self collision
+                if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+                    gameOver();
+                    return;
+                }
+
+                // Update snake position
+                snake.unshift(head);
+
+                // Check if food is eaten
+                if (food && head.x === food.x && head.y === food.y) {
+                    score += 10;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    generateFood();
+                } else {
+                    snake.pop();
+                }
+
+                // Optimize drawing by only updating changed cells
+                const newPositions = new Set();
+                
+                // Draw snake
+                snake.forEach((segment, index) => {
+                    const cellIndex = segment.y * 10 + segment.x;
+                    if (cellIndex >= 0 && cellIndex < cells.length) {
+                        cells[cellIndex].style.backgroundColor = index === 0 ? cellStyles.head : cellStyles.snake;
+                        newPositions.add(cellIndex);
+                    }
+                });
+
+                // Draw food
+                if (food) {
+                    const foodIndex = food.y * 10 + food.x;
+                    cells[foodIndex].style.backgroundColor = cellStyles.food;
+                    newPositions.add(foodIndex);
+                }
+
+                // Clear only cells that aren't part of the new state
+                cells.forEach((cell, index) => {
+                    if (!newPositions.has(index)) {
+                        cell.style.backgroundColor = cellStyles.empty;
+                    }
+                });
+
+                requestAnimationFrame(updateGame);
+            }
+
+            function gameOver() {
+                isGameActive = false;
+                const gameOverText = document.createElement('div');
+                gameOverText.style.color = '#fff';
+                gameOverText.style.fontFamily = 'monospace';
+                gameOverText.style.marginTop = '10px';
+                gameOverText.textContent = `Game Over! Final Score: ${score}`;
+                gameElement.appendChild(gameOverText);
+            }
+            
+            // Simple keyboard handler
+            const handleKeyDown = (e) => {
+                if (!isGameActive) return;
+
+                if (e.key === 'Escape') {
+                    isGameActive = false;
+                    gameContainer.remove();
+                    document.removeEventListener('keydown', handleKeyDown);
+                    return;
+                }
+
+                if (e.key === ' ') { // Space bar
+                    isPaused = !isPaused;
+                    e.preventDefault();
+                    return;
+                }
+                
+                // Update direction based on key press
+                switch(e.key) {
+                    case 'ArrowUp':
+                        if (direction !== 'down') {
+                            nextDirection = 'up';
+                            if (!hasStarted) {
+                                hasStarted = true;
+                                isPaused = false;
+                            }
+                        }
+                        e.preventDefault();
+                        break;
+                    case 'ArrowDown':
+                        if (direction !== 'up') {
+                            nextDirection = 'down';
+                            if (!hasStarted) {
+                                hasStarted = true;
+                                isPaused = false;
+                            }
+                        }
+                        e.preventDefault();
+                        break;
+                    case 'ArrowLeft':
+                        if (direction !== 'right') {
+                            nextDirection = 'left';
+                            if (!hasStarted) {
+                                hasStarted = true;
+                                isPaused = false;
+                            }
+                        }
+                        e.preventDefault();
+                        break;
+                    case 'ArrowRight':
+                        if (direction !== 'left') {
+                            nextDirection = 'right';
+                            if (!hasStarted) {
+                                hasStarted = true;
+                                isPaused = false;
+                            }
+                        }
+                        e.preventDefault();
+                        break;
+                }
+            };
+            
+            // Add keyboard listener
+            document.addEventListener('keydown', handleKeyDown);
+            
+            // Generate initial food
+            generateFood();
+
+            // Draw initial snake
+            snake.forEach((segment, index) => {
+                const cellIndex = segment.y * 10 + segment.x;
+                cells[cellIndex].style.backgroundColor = index === 0 ? cellStyles.head : cellStyles.snake;
+            });
+            
+            // Start game loop using requestAnimationFrame
+            requestAnimationFrame(updateGame);
+
+            // Add instructions
+            const instructions = document.createElement('div');
+            instructions.style.marginTop = '10px';
+            instructions.style.color = '#fff';
+            instructions.style.fontFamily = 'monospace';
+            instructions.textContent = 'Click the game to focus. Use arrow keys to start moving. Press Space to pause. Press Escape to exit.';
+            gameElement.appendChild(instructions);
+            
+            return "Snake game started! Click the game to focus. Use arrow keys to start moving. Press Space to pause. Press Escape to exit.";
+        },
         resume: () => {
             window.open('references/pdfs/Nicholas_Ramirez_Resume.pdf', '_blank');
             return 'Opening resume in new tab...';
         }
     };
+
+    // Sanitize input to prevent XSS
+    function sanitizeInput(input) {
+        return input.replace(/[<>]/g, '');
+    }
+
+    // Validate URLs before navigation
+    function isValidUrl(url) {
+        const allowedDomains = [
+            'about',
+            'projects',
+            'education',
+            'blog',
+            'travel',
+            'references/pdfs/Nicholas_Ramirez_Resume.pdf'
+        ];
+        return allowedDomains.some(domain => url.startsWith(domain));
+    }
 
     // Get all available commands for tab completion
     const availableCommands = Object.keys(commands);
@@ -160,7 +431,7 @@ Type 'book-recommendation' again for another recommendation!`;
     function handleTabCompletion(e) {
         if (e.key === 'Tab') {
             e.preventDefault();
-            const input = terminalInput.value.trim().toLowerCase();
+            const input = sanitizeInput(terminalInput.value.trim().toLowerCase());
             
             if (input === '') {
                 return;
@@ -184,12 +455,15 @@ Type 'book-recommendation' again for another recommendation!`;
 
     function addToHistory(command, output) {
         const commandElement = document.createElement('div');
-        commandElement.innerHTML = `<span class="terminal-prompt">nicholas@portfolio:~$</span> ${command}`;
+        // Sanitize the command before displaying
+        const sanitizedCommand = sanitizeInput(command);
+        commandElement.innerHTML = `<span class="terminal-prompt">nicholas@portfolio:~$</span> ${sanitizedCommand}`;
         terminalHistory.appendChild(commandElement);
 
         if (output) {
             const outputElement = document.createElement('div');
             outputElement.className = 'command-output';
+            // Sanitize the output before displaying
             outputElement.textContent = output;
             terminalHistory.appendChild(outputElement);
         }
@@ -198,7 +472,7 @@ Type 'book-recommendation' again for another recommendation!`;
     }
 
     function processCommand(command) {
-        command = command.trim().toLowerCase();
+        command = sanitizeInput(command.trim().toLowerCase());
         commandHistory.push(command);
         historyIndex = commandHistory.length;
 
@@ -216,6 +490,52 @@ Type 'book-recommendation' again for another recommendation!`;
         }
     }
 
+    // Override the navigation commands to include URL validation
+    const originalCommands = { ...commands };
+    commands.about = () => {
+        if (isValidUrl('about')) {
+            window.location.href = 'about';
+            return 'Navigating to About page...';
+        }
+        return 'Invalid navigation attempt';
+    };
+    commands.projects = () => {
+        if (isValidUrl('projects')) {
+            window.location.href = 'projects';
+            return 'Navigating to Projects page...';
+        }
+        return 'Invalid navigation attempt';
+    };
+    commands.education = () => {
+        if (isValidUrl('education')) {
+            window.location.href = 'education';
+            return 'Navigating to Education page...';
+        }
+        return 'Invalid navigation attempt';
+    };
+    commands.blog = () => {
+        if (isValidUrl('blog')) {
+            window.location.href = 'blog';
+            return 'Navigating to Blog page...';
+        }
+        return 'Invalid navigation attempt';
+    };
+    commands.travel = () => {
+        if (isValidUrl('travel')) {
+            window.location.href = 'travel';
+            return 'Navigating to Travel page...';
+        }
+        return 'Invalid navigation attempt';
+    };
+    commands.resume = () => {
+        if (isValidUrl('references/pdfs/Nicholas_Ramirez_Resume.pdf')) {
+            window.open('references/pdfs/Nicholas_Ramirez_Resume.pdf', '_blank');
+            return 'Opening resume in new tab...';
+        }
+        return 'Invalid file access attempt';
+    };
+
+    // Add main terminal input handler
     terminalInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
             const command = terminalInput.value;
