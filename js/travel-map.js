@@ -268,28 +268,69 @@ const travelLocations = [
         coordinates: [46.2500, 12.5667],   
         date: "Summer 2025",
         description: "Dolomites with family."
-    },
-
-
-
-
-    
-    // Add more locations as needed
+    }
 ];
 
-// Add markers for each location
-travelLocations.forEach(location => {
+// Consolidate duplicate cities into single entries with multiple visits
+function consolidateLocations(locations) {
+    const consolidated = {};
+    
+    locations.forEach(location => {
+        const key = location.name;
+        
+        if (!consolidated[key]) {
+            consolidated[key] = {
+                name: location.name,
+                coordinates: location.coordinates,
+                visits: []
+            };
+        }
+        
+        consolidated[key].visits.push({
+            date: location.date,
+            description: location.description
+        });
+    });
+    
+    return Object.values(consolidated);
+}
+
+// Create popup content for consolidated locations
+function createPopupContent(location) {
+    if (location.visits.length === 1) {
+        const visit = location.visits[0];
+        return `
+            <div class="location-popup">
+                <h3>${location.name}</h3>
+                <p>${visit.description}</p>
+                <span class="visit-date">Visited: ${visit.date}</span>
+            </div>
+        `;
+    } else {
+        const visitsHtml = location.visits.map(visit => `
+            <div class="visit-entry">
+                <p><strong>${visit.date}</strong></p>
+                <p>${visit.description}</p>
+            </div>
+        `).join('');
+        
+        return `
+            <div class="location-popup">
+                <h3>${location.name}</h3>
+                <p class="visit-count">Visited ${location.visits.length} times:</p>
+                ${visitsHtml}
+            </div>
+        `;
+    }
+}
+
+// Get consolidated locations
+const consolidatedLocations = consolidateLocations(travelLocations);
+
+// Add markers for each consolidated location
+consolidatedLocations.forEach(location => {
     const marker = L.marker(location.coordinates, { icon: customIcon }).addTo(map);
-    
-    // Create popup content
-    const popupContent = `
-        <div class="location-popup">
-            <h3>${location.name}</h3>
-            <p>${location.description}</p>
-            <span class="visit-date">Visited: ${location.date}</span>
-        </div>
-    `;
-    
+    const popupContent = createPopupContent(location);
     marker.bindPopup(popupContent);
 });
 
@@ -301,7 +342,7 @@ map.on('click', function(e) {
 // Update stats based on actual data
 document.addEventListener('DOMContentLoaded', function() {
     // Calculate unique countries visited (excluding US states)
-    const countriesVisited = new Set(travelLocations.map(loc => {
+    const countriesVisited = new Set(consolidatedLocations.map(loc => {
         const parts = loc.name.split(',');
         const location = parts[parts.length - 1].trim();
         // List of US states to exclude from country count
@@ -314,8 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return usStates.includes(location) ? null : location;
     }).filter(Boolean)).size;
 
-    // Calculate total cities explored
-    const citiesExplored = travelLocations.length;
+    // Calculate unique cities explored
+    const citiesExplored = consolidatedLocations.length;
 
     // Calculate continents visited
     const continentMap = {
@@ -339,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Mexico': 'North America'
     };
 
-    const continents = new Set(travelLocations.map(loc => {
+    const continents = new Set(consolidatedLocations.map(loc => {
         const parts = loc.name.split(',');
         const location = parts[parts.length - 1].trim();
         return continentMap[location] || 'Unknown';
