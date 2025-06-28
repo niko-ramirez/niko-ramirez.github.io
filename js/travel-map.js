@@ -165,13 +165,13 @@ const travelLocations = [
         name: "Myrtle Beach, South Carolina",
         coordinates: [33.6891, -79.0193],   
         date: "Winter 2025",
-        description: "Visted Johnathan."
+        description: "Visted Jonathan."
     },
     {
         name: "Florence, South Carolina",
         coordinates: [34.1954, -81.1637],   
         date: "Winter 2025",
-        description: "Visted Johnathan."
+        description: "Visted Jonathan."
     },
     {
         name: "Cancun, Mexico",
@@ -207,7 +207,7 @@ const travelLocations = [
         name: "San Luis Obispo, California",
         coordinates: [35.2828, -120.6595],   
         date: "Winter 2018",
-        description: "Trip to Jonathan college withj Kevin."
+        description: "Trip to Jonathan college with Kevin."
     },
     {
         name: "San Diego, California",
@@ -227,6 +227,51 @@ const travelLocations = [
         date: "Fall 2024",
         description: "Golab single day trip."
     },
+    {
+        name: "Naples, Italy",
+        coordinates: [40.8394, 14.2528],   
+        date: "Summer 2025",
+        description: "Visted Mt. Vesuvius and Pompeii with family."
+    },
+    {
+        name: "Capri, Italy",
+        coordinates: [40.5524, 14.2423],   
+        date: "Summer 2025",
+        description: "Visted during choppy waters with family."
+    },  
+    {
+        name: "Florence, Italy",
+        coordinates: [43.7696, 11.2558],   
+        date: "Summer 2025",
+        description: "Jubilee 2025 with family."
+    },
+    {
+        name: "Rome, Italy",
+        coordinates: [41.9033, 12.4534],   
+        date: "Summer 2025",
+        description: "Jubilee 2025 with family."
+    },
+    {
+        name: "Assisi, Italy",
+        coordinates: [43.0731, 12.6184],   
+        date: "Summer 2025",
+        description: "Jubilee 2025 with family."
+    },
+    {
+        name: "Venice, Italy",
+        coordinates: [45.4408, 12.3155],   
+        date: "Summer 2025",
+        description: "Trip with family."
+    },
+    {
+        name: "Cortina d'Ampezzo, Italy",
+        coordinates: [46.2500, 12.5667],   
+        date: "Summer 2025",
+        description: "Dolomites with family."
+    },
+
+
+
 
     
     // Add more locations as needed
