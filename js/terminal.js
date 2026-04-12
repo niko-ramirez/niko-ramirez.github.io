@@ -53,24 +53,39 @@ book-recommendation - Get a random book from my reading list
 snake - Play a simple snake game`;
         },
         about: () => {
-            window.location.href = 'about';
-            return 'Navigating to About page...';
+            if (isValidUrl('about')) {
+                window.location.href = 'about';
+                return 'Navigating to About page...';
+            }
+            return 'Invalid navigation attempt';
         },
         projects: () => {
-            window.location.href = 'projects';
-            return 'Navigating to Projects page...';
+            if (isValidUrl('projects')) {
+                window.location.href = 'projects';
+                return 'Navigating to Projects page...';
+            }
+            return 'Invalid navigation attempt';
         },
         education: () => {
-            window.location.href = 'education';
-            return 'Navigating to Education page...';
+            if (isValidUrl('education')) {
+                window.location.href = 'education';
+                return 'Navigating to Education page...';
+            }
+            return 'Invalid navigation attempt';
         },
         blog: () => {
-            window.location.href = 'blog';
-            return 'Navigating to Blog page...';
+            if (isValidUrl('blog')) {
+                window.location.href = 'blog';
+                return 'Navigating to Blog page...';
+            }
+            return 'Invalid navigation attempt';
         },
         travel: () => {
-            window.location.href = 'travel';
-            return 'Navigating to Travel page...';
+            if (isValidUrl('travel')) {
+                window.location.href = 'travel';
+                return 'Navigating to Travel page...';
+            }
+            return 'Invalid navigation attempt';
         },
         clear: () => {
             terminalHistory.innerHTML = '';
@@ -521,8 +536,11 @@ Type 'book-recommendation' again for another recommendation!`;
             return "Snake game started! Click the game to focus. Use arrow keys to start moving. Press Space to pause. Press Escape to exit.";
         },
         resume: () => {
-            window.open('references/pdfs/Nicholas_Ramirez_Resume.pdf', '_blank');
-            return 'Opening resume in new tab...';
+            if (isValidUrl('references/pdfs/Nicholas_Ramirez_Resume.pdf')) {
+                window.open('references/pdfs/Nicholas_Ramirez_Resume.pdf', '_blank');
+                return 'Opening resume in new tab...';
+            }
+            return 'Invalid file access attempt';
         }
     };
 
@@ -614,51 +632,6 @@ Type 'book-recommendation' again for another recommendation!`;
             addToHistory(command, `Command not found: ${command}. Type 'help' for available commands.`);
         }
     }
-
-    // Override the navigation commands to include URL validation
-    const originalCommands = { ...commands };
-    commands.about = () => {
-        if (isValidUrl('about')) {
-            window.location.href = 'about';
-            return 'Navigating to About page...';
-        }
-        return 'Invalid navigation attempt';
-    };
-    commands.projects = () => {
-        if (isValidUrl('projects')) {
-            window.location.href = 'projects';
-            return 'Navigating to Projects page...';
-        }
-        return 'Invalid navigation attempt';
-    };
-    commands.education = () => {
-        if (isValidUrl('education')) {
-            window.location.href = 'education';
-            return 'Navigating to Education page...';
-        }
-        return 'Invalid navigation attempt';
-    };
-    commands.blog = () => {
-        if (isValidUrl('blog')) {
-            window.location.href = 'blog';
-            return 'Navigating to Blog page...';
-        }
-        return 'Invalid navigation attempt';
-    };
-    commands.travel = () => {
-        if (isValidUrl('travel')) {
-            window.location.href = 'travel';
-            return 'Navigating to Travel page...';
-        }
-        return 'Invalid navigation attempt';
-    };
-    commands.resume = () => {
-        if (isValidUrl('references/pdfs/Nicholas_Ramirez_Resume.pdf')) {
-            window.open('references/pdfs/Nicholas_Ramirez_Resume.pdf', '_blank');
-            return 'Opening resume in new tab...';
-        }
-        return 'Invalid file access attempt';
-    };
 
     // Add main terminal input handler
     terminalInput.addEventListener('keydown', (e) => {

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+{%- include head.html -%}
+</head>
+<body>
+    <div id="colorlib-page">
+        {%- include mobile-nav.html -%}
+        {%- include mobile-menu.html -%}
+        <div class="container-wrap">
+            {%- include sidebar.html -%}
+            <div id="colorlib-main">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+    {%- include scripts.html -%}
+</body>
+</html>

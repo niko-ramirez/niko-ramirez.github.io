@@ -1,0 +1,10 @@
+title: Nicholas Ramirez | SWE
+description: Personal website of Nicholas Ramirez
+url: https://nikoramirez.com
+baseurl: ""
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .DS_Store

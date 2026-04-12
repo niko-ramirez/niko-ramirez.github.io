@@ -1,0 +1,27 @@
+<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+    <div class="text-center">
+        <div class="author-img" style="background-image: url({{ '/references/images/my_headshot.jpg' | relative_url }});" role="img" aria-label="Nicholas Ramirez's headshot"></div>
+        <h1 id="colorlib-logo"><a href="{{ '/' | relative_url }}">Nicholas Ramirez</a></h1>
+        <span class="position">SWE | MIT '22</span>
+    </div>
+    <nav id="colorlib-main-menu" role="navigation" class="navbar">
+        <div id="navbar" class="collapse">
+            <ul>
+                <li{% if page.nav_active == "home" %} class="active"{% endif %}><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li{% if page.nav_active == "about" %} class="active"{% endif %}><a href="{{ '/about' | relative_url }}">About</a></li>
+                <li{% if page.nav_active == "projects" %} class="active"{% endif %}><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+                <li{% if page.nav_active == "education" %} class="active"{% endif %}><a href="{{ '/education' | relative_url }}">Education</a></li>
+                <li{% if page.nav_active == "blog" %} class="active"{% endif %}><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                <li{% if page.nav_active == "travel" %} class="active"{% endif %}><a href="{{ '/travel' | relative_url }}">Travel</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="colorlib-footer">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/nicholas-ramirez-46b302191/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="icon-social-linkedin"></i></a></li>
+            <li><a href="https://github.com/niko-ramirez" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="icon-social-github"></i></a></li>
+            <li><a href="mailto:nicholas.ray.ramirez@gmail.com" aria-label="Send Email"><i class="icon-mail"></i></a></li>
+            <li><a href="{{ '/references/pdfs/Nicholas_Ramirez_Resume.pdf' | relative_url }}" aria-label="Download Resume"><i class="icon-attachment"></i></a></li>
+        </ul>
+    </div>
+</aside>

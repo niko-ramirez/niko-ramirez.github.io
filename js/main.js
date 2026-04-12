@@ -88,16 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	setupMenu();
 });
 
-// Handle window resize with debounce
-let resizeTimer;
-window.addEventListener('resize', () => {
-	clearTimeout(resizeTimer);
-	resizeTimer = setTimeout(() => {
-		// Handle any responsive layout changes here
-	}, 250);
-});
-
-// Add loading state for images
+// Lazy-load images with data-src
 document.addEventListener('DOMContentLoaded', () => {
 	const images = document.querySelectorAll('img[data-src]');
 	const imageObserver = new IntersectionObserver((entries) => {

@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Custom marker icon
 const customIcon = L.icon({
-    iconUrl: '../references/images/map_icon.png',
+    iconUrl: '/references/images/map_icon.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
@@ -21,7 +21,7 @@ const travelLocations = [
         name: "San Francisco, California",
         coordinates: [37.7749, -122.4194],
         date: "Summer 2022",
-        description: "Walked along the Seine River, visited the Eiffel Tower, and explored the rich art and culture of the City of Light."
+        description: "Explored the Golden Gate Bridge, Fisherman's Wharf, and the vibrant neighborhoods of the City by the Bay."
     },
     {
         name: "New York, USA",
@@ -42,7 +42,7 @@ const travelLocations = [
         description: "Undergrad and grad school."
     },
     {
-        name: "Achorage, Alaska",
+        name: "Anchorage, Alaska",
         coordinates: [61.2181, -149.9003],
         date: "Winter 2021",
         description: "Undergrad and grad school."
@@ -51,7 +51,7 @@ const travelLocations = [
         name: "Florence, Italy",
         coordinates: [43.7696, 11.2558],
         date: "Fall 2024",
-        description: "Golab Conference."
+        description: "GoLab Conference."
     },
     {
         name: "London, England",
@@ -165,13 +165,13 @@ const travelLocations = [
         name: "Myrtle Beach, South Carolina",
         coordinates: [33.6891, -79.0193],   
         date: "Winter 2025",
-        description: "Visted Jonathan."
+        description: "Visited Jonathan."
     },
     {
         name: "Florence, South Carolina",
         coordinates: [34.1954, -81.1637],   
         date: "Winter 2025",
-        description: "Visted Jonathan."
+        description: "Visited Jonathan."
     },
     {
         name: "Cancun, Mexico",
@@ -189,7 +189,7 @@ const travelLocations = [
         name: "Philadelphia, Pennsylvania",
         coordinates: [39.9526, -75.1652],   
         date: "Winter 2019",
-        description: "ThanksgivingTrip with Lay and Squad."
+        description: "Thanksgiving Trip with Lay and Squad."
     },
     {
         name: "Cape Cod, Massachusetts",
@@ -225,19 +225,19 @@ const travelLocations = [
         name: "Rome, Italy",
         coordinates: [41.9033, 12.4534],   
         date: "Fall 2024",
-        description: "Golab single day trip."
+        description: "GoLab single day trip."
     },
     {
         name: "Naples, Italy",
         coordinates: [40.8394, 14.2528],   
         date: "Summer 2025",
-        description: "Visted Mt. Vesuvius and Pompeii with family."
+        description: "Visited Mt. Vesuvius and Pompeii with family."
     },
     {
         name: "Capri, Italy",
         coordinates: [40.5524, 14.2423],   
         date: "Summer 2025",
-        description: "Visted during choppy waters with family."
+        description: "Visited during choppy waters with family."
     },  
     {
         name: "Florence, Italy",

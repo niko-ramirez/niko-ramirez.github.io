@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ page.description }}" />
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}" />
+{% endif %}<meta name="author" content="Nicholas Ramirez" />
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:image" content="{{ page.og_image | default: '/references/images/my_headshot.jpg' | absolute_url }}" />
+
+<link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="{{ '/css/style.css' | relative_url }}" as="style">
+<link rel="preload" href="{{ '/js/main.js' | relative_url }}" as="script">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ '/css/animate.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/icomoon.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/bootstrap.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/flexslider.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/owl.carousel.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/owl.theme.default.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+
+{% for css in page.extra_css %}
+{% if css contains '://' %}
+<link rel="stylesheet" href="{{ css }}">
+{% else %}
+<link rel="stylesheet" href="{{ css | relative_url }}">
+{% endif %}
+{% endfor %}
+
+<script src="{{ '/js/modernizr-2.6.2.min.js' | relative_url }}" defer></script>
