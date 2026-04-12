@@ -27,7 +27,7 @@ nav_active: blog
             <div class="post-overlay">
                 <span class="post-category">Healthcare in the US</span>
                 <h2>Coming Soon: Diagnosing the US Healthcare System</h2>
-                expensive, complicated, dysfunctional — and broken
+                <p class="post-tagline">expensive, complicated, dysfunctional — and broken</p>
                 <p>Exploring the broken healthcare system costing the US billions.</p>
                 <a href="{{ '/blog/posts/healthcare-usa.html' | relative_url }}" class="read-more">Read More <i class="icon-arrow-right"></i></a>
             </div>
@@ -96,7 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!noResultsMsg) {
                 noResultsMsg = document.createElement('div');
                 noResultsMsg.className = 'no-results-message';
-                noResultsMsg.innerHTML = '<p>No posts found matching "' + searchTerm + '"</p><p>Try different keywords or browse all posts</p>';
+                const matchMsg = document.createElement('p');
+                matchMsg.textContent = 'No posts found matching "' + searchTerm + '"';
+                const hintMsg = document.createElement('p');
+                hintMsg.textContent = 'Try different keywords or browse all posts';
+                noResultsMsg.appendChild(matchMsg);
+                noResultsMsg.appendChild(hintMsg);
                 document.querySelector('.blog-posts-grid').appendChild(noResultsMsg);
             }
         } else if (noResultsMsg) {

@@ -49,7 +49,7 @@ const setupProjectSearch = () => {
 				const category = item.dataset.category;
 
 				const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-				const matchesFilter = activeFilter === 'all' || category === activeFilter;
+				const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
 
 				if (matchesSearch && matchesFilter) {
 					item.style.display = '';
