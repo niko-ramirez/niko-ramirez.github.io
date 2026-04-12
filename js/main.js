@@ -1,49 +1,8 @@
 'use strict';
 
-// Modern JavaScript with ES6+ features
-const projects = [
-	{
-		id: "projectTykOperator",
-		url: "https://github.com/TykTechnologies/tyk-operator"
-	},
-	{
-		id: "projectCloudixia",
-		url: "https://ajtima.com"
-	},
-	{
-		id: "projectServ",
-		url: "https://www.getserv.io"
-	},
-	{
-		id: "projectSedkodes",
-		url: "https://www.youtube.com/channel/UCXR-k7wwwhdovpXXkRitJ_g"
-	}
-];
-
-// Initialize projects with modern event handling
-const initializeProjects = () => {
-	projects.forEach(project => {
-		const projectElement = document.getElementById(project.id);
-		if (projectElement) {
-			projectElement.style.cursor = 'pointer';
-			projectElement.addEventListener('click', () => {
-				window.open(project.url, '_blank');
-			});
-		}
-	});
-};
-
-// Mobile detection using modern feature detection
-const isMobile = {
-	any: () => {
-		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-	}
-};
-
-// Modern animation handling
 const setupAnimations = () => {
 	const animateElements = document.querySelectorAll('.animate-box');
-	
+
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -58,47 +17,7 @@ const setupAnimations = () => {
 	animateElements.forEach(element => observer.observe(element));
 };
 
-// Responsive menu handling
-const setupMenu = () => {
-	const menuToggle = document.querySelector('.js-colorlib-nav-toggle');
-	const body = document.body;
-
-	if (menuToggle) {
-		menuToggle.addEventListener('click', (e) => {
-			e.preventDefault();
-			body.classList.toggle('offcanvas');
-			menuToggle.classList.toggle('active');
-		});
-	}
-
-	// Close menu when clicking outside
-	document.addEventListener('click', (e) => {
-		const container = document.querySelector('#colorlib-aside, .js-colorlib-nav-toggle');
-		if (!container.contains(e.target) && body.classList.contains('offcanvas')) {
-			body.classList.remove('offcanvas');
-			menuToggle.classList.remove('active');
-		}
-	});
-};
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-	initializeProjects();
-	setupAnimations();
-	setupMenu();
-});
-
-// Handle window resize with debounce
-let resizeTimer;
-window.addEventListener('resize', () => {
-	clearTimeout(resizeTimer);
-	resizeTimer = setTimeout(() => {
-		// Handle any responsive layout changes here
-	}, 250);
-});
-
-// Add loading state for images
-document.addEventListener('DOMContentLoaded', () => {
+const setupLazyImages = () => {
 	const images = document.querySelectorAll('img[data-src]');
 	const imageObserver = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
@@ -112,15 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	images.forEach(img => imageObserver.observe(img));
-});
+};
 
-// Projects Page Functionality
-document.addEventListener('DOMContentLoaded', function() {
+const setupProjectSearch = () => {
 	const searchInput = document.getElementById('projectSearch');
 	const filterButtons = document.querySelectorAll('.filter-btn');
 	const projectItems = document.querySelectorAll('.project-item');
 
-	// Search functionality
 	if (searchInput) {
 		searchInput.addEventListener('input', function() {
 			const searchTerm = this.value.toLowerCase();
@@ -132,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				const category = item.dataset.category;
 
 				const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-				const matchesFilter = activeFilter === 'all' || category === activeFilter;
+				const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
 
 				if (matchesSearch && matchesFilter) {
 					item.style.display = '';
@@ -143,13 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
-	// Filter functionality
 	if (filterButtons.length) {
 		filterButtons.forEach(button => {
 			button.addEventListener('click', function() {
-				// Remove active class from all buttons
 				filterButtons.forEach(btn => btn.classList.remove('active'));
-				// Add active class to clicked button
 				this.classList.add('active');
 
 				const filter = this.dataset.filter;
@@ -172,10 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			});
 		});
 	}
-});
+};
 
-// Mobile Menu Functionality
-document.addEventListener('DOMContentLoaded', function() {
+const setupMobileMenu = () => {
 	const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 	const mobileMenu = document.querySelector('.mobile-menu');
 	const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
@@ -192,13 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	if (mobileMenuBtn && mobileMenu && mobileMenuOverlay) {
 		mobileMenuBtn.addEventListener('click', toggleMenu);
 		mobileMenuOverlay.addEventListener('click', toggleMenu);
-		
-		// Add close button functionality
+
 		if (mobileMenuClose) {
 			mobileMenuClose.addEventListener('click', toggleMenu);
 		}
 
-		// Close menu when clicking a link
 		const mobileMenuLinks = mobileMenu.querySelectorAll('a');
 		mobileMenuLinks.forEach(link => {
 			link.addEventListener('click', () => {
@@ -208,11 +119,17 @@ document.addEventListener('DOMContentLoaded', function() {
 			});
 		});
 
-		// Close menu on window resize if open
 		window.addEventListener('resize', () => {
 			if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
 				toggleMenu();
 			}
 		});
 	}
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	setupAnimations();
+	setupLazyImages();
+	setupProjectSearch();
+	setupMobileMenu();
 });
