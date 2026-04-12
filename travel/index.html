@@ -12,56 +12,43 @@ extra_js:
 ---
 <section class="colorlib-travel">
     <div class="colorlib-narrow-content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row row-bottom-padded-sm">
-                    <div class="col-md-12">
-                        <div class="about-desc">
-                            <span class="heading-meta">My Travel Journey</span>
-                            <h2 class="colorlib-heading">Places I've Explored</h2>
-                            <p>Explore the map below to see all the places I've visited around the world. Each marker
-                                represents a location I've been to, and clicking on them will show more details about my
-                                experience there.</p>
-                        </div>
+        <!-- Hero -->
+        <div class="travel-hero">
+            <div class="hero-content">
+                <span class="hero-subtitle">My Journeys</span>
+                <h1 class="hero-title">Travel Map</h1>
+                <p class="hero-description">A collection of the places I've traveled to over the years. Click a pin on
+                    the map for fun details.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-countries">&mdash;</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-cities">&mdash;</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="stat-continents">&mdash;</span>
+                        <span class="stat-label">Continents</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Interactive Map -->
-        <div class="row">
-            <div class="col-md-12">
+        <!-- Map + Detail Panel -->
+        <div class="travel-map-wrap">
+            <div class="travel-filter-bar" id="travel-filters"></div>
+            <div class="travel-map-container">
                 <div id="travel-map"></div>
-            </div>
-        </div>
-
-        <!-- Travel Stats -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="travel-stats">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="stat-box">
-                                <h3>Countries Visited</h3>
-                                <p class="stat-number">&mdash;</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-box">
-                                <h3>Cities Explored</h3>
-                                <p class="stat-number">&mdash;</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="stat-box">
-                                <h3>Continents</h3>
-                                <p class="stat-number">&mdash;</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="travel-detail-panel" id="detail-panel">
+                    <button class="detail-close" id="detail-close" aria-label="Close">&times;</button>
+                    <div class="detail-body" id="detail-body"></div>
                 </div>
             </div>
         </div>
 
+        <!-- Trip List -->
+        <div class="travel-trip-list" id="trip-list"></div>
     </div>
 </section>
