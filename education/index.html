@@ -7,6 +7,8 @@ nav_active: education
 extra_css:
 - /css/bookshelf.css
 - /css/education.css
+extra_js:
+- /js/skill-tree.js
 ---
 <section class="colorlib-education">
     <div class="colorlib-narrow-content">
@@ -24,97 +26,134 @@ extra_css:
             </div>
         </div>
 
-        <!-- MIT Education -->
+        <!-- Skill Tree -->
         <div class="row">
             <div class="col-md-12">
-                <div class="teaching-experience">
+                <div class="skill-tree-section">
                     <div class="section-header">
-                        <h3>Massachusetts Institute of Technology</h3>
-                        <p>Bachelor's and Master's degrees in Electrical Engineering and Computer Science</p>
+                        <h3>My Educational Skill Tree</h3>
+                        <p>Click a node to learn more</p>
                     </div>
-                    <div class="teaching-grid">
-                        <div class="teaching-item">
-                            <div class="teaching-icon">
-                                <i class="icon-study"></i>
-                            </div>
-                            <div class="teaching-content">
-                                <h4>Master's of Engineering in Electrical Engineering and Computer Science</h4>
-                                <p class="teaching-role">MEng</p>
-                                <p class="teaching-period">2023 - 2024</p>
-                                <p class="teaching-description">Thesis research in Machine Learning, complemented by
-                                    advanced coursework in ML algorithms, deep learning, and their practical
-                                    applications.</p>
-                            </div>
-                        </div>
-                        <div class="teaching-item">
-                            <div class="teaching-icon">
-                                <i class="icon-device-laptop"></i>
-                            </div>
-                            <div class="teaching-content">
-                                <h4>Bachelor of Science in Electrical Engineering and Computer Science</h4>
-                                <p class="teaching-role">B.S.</p>
-                                <p class="teaching-period">2018 - 2022</p>
-                                <p class="teaching-description">Balanced curriculum covering electrical engineering
-                                    fundamentals and computer science principles, from circuit design to software
-                                    development.</p>
+
+                    <div class="skill-tree" id="skillTree">
+                        <svg class="tree-connectors" id="treeConnectors" aria-hidden="true"></svg>
+
+                        <!-- Tier 0: Root -->
+                        <div class="tree-tier" data-tier="0">
+                            <div class="tree-node node-root node-completed" data-node="mit" data-title="Admitted to MIT"
+                                data-period="Fall 2018" data-type="Milestone"
+                                data-desc="Began my journey at the Massachusetts Institute of Technology in the Department of Electrical Engineering and Computer Science.">
+                                <div class="node-hex">
+                                    <i class="icon-study"></i>
+                                </div>
+                                <span class="node-label">MIT</span>
+                                <span class="node-year">2018</span>
                             </div>
                         </div>
-                        <div class="teaching-item">
-                            <div class="teaching-icon">
-                                <i class="icon-music2"></i>
+
+                        <!-- Tier 1: First branches -->
+                        <div class="tree-tier" data-tier="1">
+                            <div class="tree-node node-degree node-completed" data-node="bs" data-parent="mit"
+                                data-title="B.S. in Electrical Engineering & Computer Science" data-period="2018 — 2022"
+                                data-type="Degree"
+                                data-desc="Balanced curriculum covering electrical engineering fundamentals and computer science principles, from circuit design to software development.">
+                                <div class="node-hex">
+                                    <i class="icon-device-laptop"></i>
+                                </div>
+                                <span class="node-label">B.S. EECS</span>
+                                <span class="node-year">2018–22</span>
                             </div>
-                            <div class="teaching-content">
-                                <h4>Music Minor</h4>
-                                <p class="teaching-role">Minor</p>
-                                <p class="teaching-period">2018 - 2022</p>
-                                <p class="teaching-description">Exploring the intersection of technology and music
-                                    through composition, theory, and digital sound processing.</p>
+                            <div class="tree-node node-minor node-completed" data-node="music" data-parent="mit"
+                                data-title="Music Minor" data-period="2018 — 2022" data-type="Minor"
+                                data-desc="Exploring the intersection of technology and music through composition, theory, and digital sound processing.">
+                                <div class="node-hex">
+                                    <i class="icon-music2"></i>
+                                </div>
+                                <span class="node-label">Music</span>
+                                <span class="node-year">2018–22</span>
+                            </div>
+                            <div class="tree-node node-research node-completed" data-node="ssl" data-parent="mit"
+                                data-title="MIT Space Systems Laboratory" data-period="2018 — 2019" data-type="Research"
+                                data-desc="Conducted thermal code testing for the WaferSat satellite-on-a-chip project as an Undergraduate Researcher.">
+                                <div class="node-hex">
+                                    <i class="icon-lab"></i>
+                                </div>
+                                <span class="node-label">Space Lab</span>
+                                <span class="node-year">2018–19</span>
                             </div>
                         </div>
+
+                        <!-- Tier 2: TA & Research -->
+                        <div class="tree-tier" data-tier="2">
+                            <div class="tree-node node-teaching node-completed" data-node="ta-ml" data-parent="bs"
+                                data-title="6.390 — Introduction to Machine Learning"
+                                data-period="2020 — 2021 &amp; 2022 — 2023" data-type="Teaching Assistant"
+                                data-desc="Mentoring students in fundamental machine learning concepts, from theory to practical implementation.">
+                                <div class="node-hex">
+                                    <i class="icon-data"></i>
+                                </div>
+                                <span class="node-label">6.390 TA</span>
+                                <span class="node-year">2020–23</span>
+                            </div>
+                            <div class="tree-node node-teaching node-completed" data-node="ta-prog" data-parent="bs"
+                                data-title="6.101 — Fundamentals of Programming" data-period="2022 — 2023"
+                                data-type="Teaching Assistant"
+                                data-desc="Guiding students through core programming concepts, emphasizing clean code practices and problem-solving strategies.">
+                                <div class="node-hex">
+                                    <i class="icon-code"></i>
+                                </div>
+                                <span class="node-label">6.101 TA</span>
+                                <span class="node-year">2022–23</span>
+                            </div>
+                            <div class="tree-node node-research node-completed" data-node="csail" data-parent="bs"
+                                data-title="MIT CSAIL — Decentralized Information Group" data-period="2022 — 2023"
+                                data-type="Research Assistant"
+                                data-desc="Working on knowledge graph completion and federated learning with differential privacy.">
+                                <div class="node-hex">
+                                    <i class="icon-data"></i>
+                                </div>
+                                <span class="node-label">CSAIL DIG</span>
+                                <span class="node-year">2022–23</span>
+                            </div>
+                        </div>
+
+                        <!-- Tier 3: MEng -->
+                        <div class="tree-tier" data-tier="3">
+                            <div class="tree-node node-degree node-completed" data-node="meng"
+                                data-parent="ta-ml,ta-prog,csail"
+                                data-title="M.Eng. in Electrical Engineering & Computer Science"
+                                data-period="2023 — 2024" data-type="Degree"
+                                data-desc="Thesis research in Machine Learning, complemented by advanced coursework in ML algorithms, deep learning, and their practical applications.">
+                                <div class="node-hex">
+                                    <i class="icon-study"></i>
+                                </div>
+                                <span class="node-label">M.Eng. EECS</span>
+                                <span class="node-year">2023–24</span>
+                            </div>
+                        </div>
+
+                        <!-- Detail panel (populated by JS) -->
+                        <div class="tree-detail" id="treeDetail">
+                            <button class="detail-close" id="detailClose" aria-label="Close">&times;</button>
+                            <span class="detail-type" id="detailType"></span>
+                            <h4 class="detail-title" id="detailTitle"></h4>
+                            <span class="detail-period" id="detailPeriod"></span>
+                            <p class="detail-desc" id="detailDesc"></p>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="tree-legend">
+                        <div class="legend-item"><span class="legend-swatch swatch-degree"></span> Degree</div>
+                        <div class="legend-item"><span class="legend-swatch swatch-minor"></span> Minor</div>
+                        <div class="legend-item"><span class="legend-swatch swatch-teaching"></span> Teaching</div>
+                        <div class="legend-item"><span class="legend-swatch swatch-research"></span> Research</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Teaching Experience -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="teaching-experience">
-                    <div class="section-header">
-                        <h3>Teaching Experience</h3>
-                        <p>Supporting student learning in programming and machine learning fundamentals</p>
-                    </div>
-                    <div class="teaching-grid">
-                        <div class="teaching-item">
-                            <div class="teaching-icon">
-                                <i class="icon-code"></i>
-                            </div>
-                            <div class="teaching-content">
-                                <h4>6.101 - Fundamentals of Programming</h4>
-                                <p class="teaching-role">Teaching Assistant</p>
-                                <p class="teaching-period">2022 - 2023</p>
-                                <p class="teaching-description">Guiding students through core programming concepts,
-                                    emphasizing clean code practices and problem-solving strategies.</p>
-                            </div>
-                        </div>
-                        <div class="teaching-item">
-                            <div class="teaching-icon">
-                                <i class="icon-data"></i>
-                            </div>
-                            <div class="teaching-content">
-                                <h4>6.390 - Introduction to Machine Learning</h4>
-                                <p class="teaching-role">Teaching Assistant</p>
-                                <p class="teaching-period">2020 - 2021 | 2022 - 2023</p>
-                                <p class="teaching-description">Mentoring students in fundamental machine learning
-                                    concepts, from theory to practical implementation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Virtual Bookshelf -->
+        <!-- Virtual Bookshelf (unchanged) -->
         <div class="row">
             <div class="col-md-12">
                 <div class="bookshelf-section">
@@ -155,7 +194,6 @@ extra_css:
                             </div>
                         </div>
 
-                        <!-- Fun Books -->
                         <div class="bookshelf-category">
                             <h4>Leisure Reading</h4>
                             <div class="book-grid">
@@ -219,14 +257,14 @@ extra_css:
                                             <h5>Why Nations Fail</h5>
                                             <p class="author">Daron Acemoglu & James A. Robinson</p>
                                             <span class="status in-progress">In Progress</span>
-                                            <p class="description">The origins of power, prosperity, and poverty across civilizations.</p>
+                                            <p class="description">The origins of power, prosperity, and poverty across
+                                                civilizations.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Computer Science & Engineering -->
                         <div class="bookshelf-category">
                             <h4>Computer Science & Engineering</h4>
                             <div class="book-grid">
@@ -238,7 +276,8 @@ extra_css:
                                             <h5>Platform Engineering</h5>
                                             <p class="author">Camille Fournier & Ian Nowland</p>
                                             <span class="status in-progress">In Progress</span>
-                                            <p class="description">A Guide for Technical, Product, and People Leaders.</p>
+                                            <p class="description">A Guide for Technical, Product, and People Leaders.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
